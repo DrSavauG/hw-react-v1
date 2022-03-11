@@ -1,11 +1,16 @@
 import React from 'react';
+import HeaderHome from "../HeaderHome/HeaderHome";
+import Footer from "../Footer/Footer";
 
-const Layout = () => {
+const Layout = ({children}) => {
     return (
-        <div>
-            <p>https://github.com/DrSavauG/hw-react-v1.git</p>
-        </div>
-    );
-};
+        <>
+
+            <header><HeaderHome/></header>
+            <main>{children}</main>
+            <Footer/>
+        </>
+    )
+}
 
 export default Layout;
