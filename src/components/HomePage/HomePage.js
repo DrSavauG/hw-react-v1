@@ -4,7 +4,7 @@ import Layout from "../Layout/Layout";
 const HomePage = () => {
     return (
         <Layout >
-            homepage-test
+            HomePage-test
             </Layout>
     );
 };

@@ -13,7 +13,7 @@ const AppRouter = () => {
                         <Route
                             key={item.path}
                             path={item.path}
-                            element={<HomePage/>}
+                            element={<item.Component/>}
                         />
 
                     ))}

@@ -1,4 +1,3 @@
-import {Component} from "react";
 import HomePage from "../components/HomePage/HomePage";
 
 const HOME_PAGE = '/';
@@ -13,4 +12,4 @@ export const routes = [
         Component: HomePage
     }
 ]
-//todo с остальными по паналогии
+//todo с остальными по аналогии
