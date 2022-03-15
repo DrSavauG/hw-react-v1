@@ -1,4 +1,7 @@
 .button__add-movie{
+    position: absolute;
+    right: 56px;
+    top: 20px;
     font-weight: 600;
     color: #F65261;
     height: 46px;
@@ -25,8 +28,8 @@
     margin: 0 0px;
 }
 .button:hover{
-    border-radius: 10px;
-    background-color: transparent;
+    /*border-radius: 10px;*/
+    background-color: white;
     color: #F65261;
 
 

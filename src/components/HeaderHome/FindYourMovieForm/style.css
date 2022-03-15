@@ -1,8 +1,9 @@
 
 .find-you-movie {
     display: flex;
-    margin: 2% 5%;
-
+    /*margin: 0 5%;*/
+/*position: absolute;*/
+    padding: 101px 5%;
 }
 
 .find-you-movie__title {

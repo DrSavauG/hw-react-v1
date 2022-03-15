@@ -11,7 +11,6 @@ const FindYourMovieForm = () => {
                         <input className={'find-you-movie__input'} type={'text'} placeholder={'What do you want to watch?'}/>
                         <Button title={"search"} className={'button button__search'}/>
                     </div>
-                        <Button title={"+ add movie"} className={'button button__add-movie'}/>
                 </label>
             </div>
 
