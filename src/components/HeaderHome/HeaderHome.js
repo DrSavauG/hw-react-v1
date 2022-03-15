@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from "../Logo/Logo";
 import './style.css';
+import FindYourMovieForm from "./FindYourMovieForm/FindYourMovieForm";
 
 const HeaderHome = () => {
     return (
@@ -11,6 +12,7 @@ const HeaderHome = () => {
                 header-content
             </div>
         </div>
+            <FindYourMovieForm/>
             <div className={'header-home-bottom-line'}></div>
         </>
     );

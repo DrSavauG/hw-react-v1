@@ -1,0 +1,33 @@
+.button__add-movie{
+    font-weight: 600;
+    color: #F65261;
+    height: 46px;
+    width: 177px;
+    background: rgba(96, 96, 96, 0.68);
+    border-radius: 4px;
+
+}
+.button__search{
+    height: 57px;
+    width: 233px;
+    font-weight: 500;
+    background-color: #F65261;
+    border-radius: 4px;
+    color: white ;
+}
+.button{
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    text-transform: uppercase;
+    border: 0;
+    margin: 0 0px;
+}
+.button:hover{
+    border-radius: 10px;
+    background-color: transparent;
+    color: #F65261;
+
+
+}
