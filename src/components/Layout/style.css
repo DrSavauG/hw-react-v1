@@ -3,4 +3,6 @@ main{
     height: 1311px;
     background-color: #232323;
     padding: 0 5%;
+    position: relative;
+
 }

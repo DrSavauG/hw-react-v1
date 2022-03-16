@@ -1,5 +1,26 @@
-.movie-list{
-    background-color: red;
-    height: 100px;
-    width: 100px;
+.movie-list {
+    height: 80vh;
+    display: grid;
+    grid-column-gap: 55px;
+    grid-row-gap: 51px;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.movie-list-h3 {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    border-top: 1px solid #080707;
+    color: #FFFFFF;
+    padding: 24px 0 28px 0;
+    margin: 4px 0;
+}
+
+.movie-list__item{
+
+
 }
