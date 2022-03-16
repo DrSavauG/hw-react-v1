@@ -5,8 +5,7 @@ import SortBy from "../SortBy/SortBy";
 
 const HeadMain = () => {
     return (
-        <div className={'head-main'}>
-            HeadMain
+        <div className={'main-header'}>
             <NavigationMain/>
             <SortBy/>
         </div>

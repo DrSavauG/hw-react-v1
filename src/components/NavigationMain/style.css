@@ -1,0 +1,22 @@
+.navigation-main-ul__li {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    list-style-type: none;
+    color: #FFFFFF;
+    margin-right: 30px;
+}
+
+.navigation-main__ul {
+    display: flex;
+    margin: 20px 0;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+}
+
