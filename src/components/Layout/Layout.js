@@ -8,7 +8,7 @@ import MovieList from "../MovieList/MovieList";
 
 const Layout = ({children}) => {
     return (
-        <>
+        <div className="App">
             <header>
                 <HeaderHome/>
             </header>
@@ -17,7 +17,7 @@ const Layout = ({children}) => {
                 <MovieList/>
             </main>
             <Footer/>
-        </>
+        </div>
     )
 }
 
