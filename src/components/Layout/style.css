@@ -1,5 +1,5 @@
 main{
-    height: 1311px;
+    min-height: 56vh;
     background-color: #232323;
     padding: 0 5%;
     position: relative;
