@@ -46,7 +46,7 @@ const MovieList = () => {
             <h3 className={'movie-list-h3'}>{itemFound} movies found</h3>
             <div className={'movie-list'}>
                 {movieLists.map((el) => (
-                    < MovieItem key={el} data={el}/>
+                    < MovieItem key={el.name} data={el}/>
                 ))}
             </div>
         </>

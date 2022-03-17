@@ -5,9 +5,9 @@ import MovieList from "../MovieList/MovieList";
 
 const HomePage = () => {
     return (
-        <Layout >
+        <Layout>
             HomePage-test
-            </Layout>
+        </Layout>
     );
 };
 
