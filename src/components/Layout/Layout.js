@@ -9,7 +9,9 @@ import MovieList from "../MovieList/MovieList";
 const Layout = ({children}) => {
     return (
         <>
-            <header><HeaderHome/></header>
+            <header>
+                <HeaderHome/>
+            </header>
             <main>
                 <HeadMain/>
                 <MovieList/>

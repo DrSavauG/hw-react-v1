@@ -1,9 +1,7 @@
 
 .find-you-movie {
     display: flex;
-    /*margin: 0 5%;*/
-/*position: absolute;*/
-    padding: 101px 5%;
+    padding: 101px 10%;
 }
 
 .find-you-movie__title {
@@ -12,7 +10,8 @@
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-weight: 300;
-    width: 100%;    letter-spacing: 1px;
+    width: 100%;
+    letter-spacing: 1px;
     color: white;
 
 }
@@ -28,7 +27,7 @@
     width: 80%;
     outline: none;
     padding: 0 19px;
-
+margin-right: 14px ;
 
     background: rgba(50, 50, 50, 0.8);
     mix-blend-mode: normal;
