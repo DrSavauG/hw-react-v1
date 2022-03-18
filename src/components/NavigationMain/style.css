@@ -8,29 +8,45 @@
     text-transform: uppercase;
     list-style-type: none;
     color: #FFFFFF;
-    /*margin-right: 30px;*/
+    padding-top: 20px;
+    vertical-align: middle;
+    height: 60px;
+    position: relative;
 }
 
 .navigation-main__ul {
     padding: 0;
     display: flex;
-    margin: 20px 0;
     justify-content: space-between;
     width: 80%;
-    max-width: 600px;;
+    max-width: 600px;
+    flex-wrap: wrap;
 }
 
 .main-header {
     display: flex;
     justify-content: space-between;
+    min-height: 59px;
+    position: relative;
+
 }
 
 .main-header::after {
     position: absolute;
-    top: 59px;
-    left: 5%;
-    right: 5%;
-    height: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
     content: close-quote;
     background: #424242;
+}
+
+.navigation-main-ul__li:hover::after {
+    position: absolute;
+    content: '';
+    border-bottom: 3px solid #F65261;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    z-index: 2;
 }
