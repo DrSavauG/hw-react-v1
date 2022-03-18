@@ -3,7 +3,7 @@ import './style.css'
 import MovieItem from "./MovieItem/MovieItem";
 
 const itemFound = 0;
-const movieLists = [
+export const movieLists = [
     {
         name: "pulp fiction",
         year: 2004,
