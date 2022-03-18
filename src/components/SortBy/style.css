@@ -1,10 +1,10 @@
 .sort-by__title {
-    /*width: 25%;*/
-    /*min-width: 270px;*/
     width: 270px;
     display: flex;
     justify-content: space-between;
-    text-transform: uppercase;
+    flex-wrap: wrap;
+}
+.sort-by__title h6 {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -14,15 +14,15 @@
     color: #FFFFFF;
     mix-blend-mode: normal;
     opacity: 0.6;
-    margin: 20px 0;
-    flex-wrap: wrap;
-
+    text-transform: uppercase;
+    padding-top: 20px;
 }
+
 
 .sort-by__select {
     width: 60%;
     font-family: 'Montserrat', sans-serif;
-    /*margin-left: 31px;*/
+    height: 60px;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;

@@ -41,12 +41,13 @@
     background: #424242;
 }
 
-.navigation-main-ul__li:hover::after {
+.navigation-main-ul__li:hover::after,
+.genre-active::after{
     position: absolute;
     content: '';
     border-bottom: 3px solid #F65261;
     left: 0;
     right: 0;
     bottom: -2px;
-    z-index: 2;
+    z-index: 3;
 }

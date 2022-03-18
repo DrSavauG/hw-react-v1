@@ -7,7 +7,7 @@ const SortBy = () => {
 
     return (
         <label className="sort-by__title">
-            {'sort by'}
+            <h6>sort by</h6>
             <select
                 className="sort-by__select"
                 onChange={(e) => setChecked(e.target.value)}
