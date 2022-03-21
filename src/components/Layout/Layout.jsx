@@ -2,18 +2,21 @@ import React from 'react';
 import HeaderHome from "../HeaderHome/HeaderHome";
 import Footer from "../Footer/Footer";
 import {Outlet} from "react-router-dom";
+import Logo from "../Logo/Logo";
 
 const Layout = () => {
     return (
-        <div className="App">
+        <>
             <header>
-                <HeaderHome/>
+                <div className={"logo-wrapper"}>
+                    <Logo/>
+                </div>
             </header>
-            <main>
-                <Outlet />
-            </main>
-            <Footer/>
-        </div>
+                <Outlet/>
+            <footer>
+                <Footer/>
+            </footer>
+        </>
     )
 }
 

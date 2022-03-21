@@ -7,12 +7,22 @@ import MovieList from "../MovieList/MovieList";
 import movieLists from "../../utils/movielist";
 import NAVIGATION from "../../utils/navigation";
 import SORTLISTS from "../../utils/sortlists";
+import {Outlet} from "react-router-dom";
 
 const HomePage = () => {
     return (
         <>
-                <HeadMain NAVIGATION={NAVIGATION} SORTLISTS={{SORTLISTS}}/>
-                <MovieList movieLists={movieLists}/>
+            <div className="App">
+                {/*<header>*/}
+                    <HeaderHome/>
+                {/*</header>*/}
+                <main>
+                    <HeadMain NAVIGATION={NAVIGATION} SORTLISTS={{SORTLISTS}}/>
+                    <MovieList movieLists={movieLists}/>
+                </main>
+                {/*<Footer/>*/}
+            </div>
+
         </>
     )
 }

@@ -9,9 +9,6 @@ const HeaderHome = () => {
     return (
         <>
             <div className={'header-home-wrapper'}>
-                <div className={"logo-wrapper"}>
-                    <Logo/>
-                </div>
                 <Button title={"+ add movie"} className={'button button__add-movie'}/>
                 <FindYourMovieForm/>
             </div>
