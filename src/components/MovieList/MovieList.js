@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css'
 import MovieItem from "./MovieItem/MovieItem";
 import {ErrorBoundary} from 'react-error-boundary';
-import ErrorFallback from "../Error/ErrorFallback/ErrorFallback";
+import ErrorFallback from "../ErrorFallback/ErrorFallback";
 
 const MovieList = (props) => {
     return (
