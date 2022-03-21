@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './style.css';
 import Logo from "../Logo/Logo";
 import {ErrorBoundary} from 'react-error-boundary';
-import ErrorFallback from "../Error/ErrorFallback/ErrorFallback";
+import ErrorFallback from "../ErrorFallback/ErrorFallback";
 
 function Bomb(){
 

@@ -10,16 +10,10 @@ import SORTLISTS from "../../utils/sortlists";
 
 const HomePage = () => {
     return (
-        <div className="App">
-            <header>
-                <HeaderHome/>
-            </header>
-            <main>
+        <>
                 <HeadMain NAVIGATION={NAVIGATION} SORTLISTS={{SORTLISTS}}/>
                 <MovieList movieLists={movieLists}/>
-            </main>
-            <Footer/>
-        </div>
+        </>
     )
 }
 

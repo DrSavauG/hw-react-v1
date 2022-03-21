@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './style.css';
 import {ErrorBoundary} from 'react-error-boundary';
-import ErrorFallback from "../Error/ErrorFallback/ErrorFallback";
+import ErrorFallback from "../ErrorFallback/ErrorFallback";
 
 const NavigationMain = ({NAVIGATION}) => {
     const [activeGenre, setActiveGenre] = useState(NAVIGATION[0]);

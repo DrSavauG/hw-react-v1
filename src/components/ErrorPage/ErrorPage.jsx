@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css'
 import {ErrorBoundary} from 'react-error-boundary';
-import ErrorFallback from "../Error/ErrorFallback/ErrorFallback";
+import ErrorFallback from "../ErrorFallback/ErrorFallback";
 
-const Error = () => {
+const ErrorPage = () => {
     return (
         <ErrorBoundary FallbackComponent={ErrorFallback} >
         <main className="main-content">
@@ -18,4 +18,4 @@ const Error = () => {
     );
 };
 
-export default Error;
+export default ErrorPage;
