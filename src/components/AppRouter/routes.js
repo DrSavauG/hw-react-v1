@@ -1,4 +1,4 @@
-import HomePage from "../components/HomePage/HomePage";
+import HomePage from "../HomePage/HomePage";
 
 const HOME_PAGE = '/';
 const AUTH_PAGE = '/auth';

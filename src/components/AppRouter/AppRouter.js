@@ -1,12 +1,11 @@
 import React from 'react';
 import HomePage from "../HomePage/HomePage";
 import {Route, Routes} from "react-router";
-import {routes} from "../../utils/routes";
+import {routes} from "./routes";
 import {BrowserRouter,} from "react-router-dom";
 
 const AppRouter = () => {
     return (
-        <>
             <BrowserRouter>
                 <Routes>
                     {routes.map((item) => (
@@ -23,7 +22,6 @@ const AppRouter = () => {
                     />
                 </Routes>
             </BrowserRouter>
-        </>
     );
 
 };

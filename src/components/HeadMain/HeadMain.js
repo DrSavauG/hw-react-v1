@@ -3,11 +3,11 @@ import './style.css'
 import NavigationMain from "../NavigationMain/NavigationMain";
 import SortBy from "../SortBy/SortBy";
 
-const HeadMain = () => {
+const HeadMain = (props) => {
     return (
         <div className={'main-header'}>
-            <NavigationMain/>
-            <SortBy/>
+            <NavigationMain NAVIGATION={props.NAVIGATION}/>
+            <SortBy SORTLISTS={props.SORTLISTS}/>
         </div>
     );
 };

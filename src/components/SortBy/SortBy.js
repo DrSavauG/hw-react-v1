@@ -1,9 +1,9 @@
-import React, {useReducer, useState} from 'react';
+import React, {useState} from 'react';
 import './style.css';
 
-const SHORTLISTS = ['release date', '1', '2', '3']
-const SortBy = () => {
-    const [checked, setChecked] = useState(SHORTLISTS[0]);
+const SortBy = (props) => {
+const SORTLISTS = props.SORTLISTS.SORTLISTS
+    const [checked, setChecked] = useState(SORTLISTS[0]);
 
     return (
         <label className="sort-by__title">
@@ -13,7 +13,7 @@ const SortBy = () => {
                 onChange={(e) => setChecked(e.target.value)}
                 value={checked}
             >
-                {SHORTLISTS.map((el) => (
+                {SORTLISTS.map((el) => (
                     <option key={el} className="sorting__el" value={el}>
                         {el}
                     </option>
