@@ -8,7 +8,7 @@ import movieLists from "../../utils/movielist";
 import NAVIGATION from "../../utils/navigation";
 import SORTLISTS from "../../utils/sortlists";
 
-const HomePage = ({children}) => {
+const HomePage = () => {
     return (
         <div className="App">
             <header>
