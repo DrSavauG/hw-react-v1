@@ -1,7 +1,7 @@
-import React, {useReducer, useState} from 'react';
+import React, {useState} from 'react';
 import './style.css';
 
-const SHORTLISTS = ['release date', '1', '2', '3']
+export const SHORTLISTS = ['release date', '1', '2', '3']
 const SortBy = () => {
     const [checked, setChecked] = useState(SHORTLISTS[0]);
 
