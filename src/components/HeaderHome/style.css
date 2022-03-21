@@ -1,7 +1,6 @@
 
 .logo-wrapper {
     display: block;
-
     height: 24px;
     width: 150px;
     position: absolute;
@@ -23,10 +22,5 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(../../assets/images/Bitmap.png);
-    /*margin-bottom: 10px;*/
-}
-.header-home-bottom-line{
-    /*width: 100%;*/
-    height: 10px;
-    background-color: #888888;
+    border-bottom: 10px solid #888888   ;
 }
