@@ -1,12 +1,15 @@
 import React from 'react';
 import './style.css';
 import Logo from "../Logo/Logo";
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 
 const Footer = () => {
     return (
-        <div className={"footer"}>
-            <Logo/>
-        </div>
+        <ErrorBoundary>
+            <div className={"footer"}>
+                <Logo/>
+            </div>
+        </ErrorBoundary>
     );
 };
 

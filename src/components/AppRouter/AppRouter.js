@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Routes} from "react-router";
 import {routes} from "./routes";
 import {BrowserRouter,} from "react-router-dom";
-import Error from "../Error";
+import Error from "../Error/Error";
 
 const AppRouter = () => {
     return (

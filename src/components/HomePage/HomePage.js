@@ -16,7 +16,7 @@ const HomePage = ({children}) => {
             </header>
             <main>
                 <HeadMain NAVIGATION={NAVIGATION} SORTLISTS={{SORTLISTS}}/>
-                <MovieList movieLists={movieLists} />
+                <MovieList movieLists={movieLists}/>
             </main>
             <Footer/>
         </div>
