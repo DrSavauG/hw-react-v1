@@ -1,8 +1,8 @@
 import React from 'react';
-import HomePage from "../HomePage/HomePage";
 import {Route, Routes} from "react-router";
 import {routes} from "./routes";
 import {BrowserRouter,} from "react-router-dom";
+import Error from "../Error";
 
 const AppRouter = () => {
     return (
@@ -18,7 +18,7 @@ const AppRouter = () => {
                     ))}
                     <Route
                         path="*"
-                        element={<HomePage/>}//404
+                        element={<Error/>}
                     />
                 </Routes>
             </BrowserRouter>
