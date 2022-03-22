@@ -2,7 +2,7 @@ import React from 'react';
 
 const AddPage = () => {
     return (
-        <div>
+        <div className={'main-wrapper '}>
             AddPage
         </div>
     );
