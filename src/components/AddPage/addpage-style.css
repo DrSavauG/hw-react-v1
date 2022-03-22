@@ -1,0 +1,82 @@
+{ /*todo: REFACTOR names*/
+}
+
+
+.main-wrapper {
+    height: calc(100% - 70px);
+    background-color: #232323;
+    padding: 5% 7%;
+}
+
+.modal-window {
+    /*background-color: #232323;*/
+    background-color: #232300;
+    height: 100%;
+    width: 100%;
+    padding: 3% 6%;
+    position: relative;
+    overflow: auto;
+}
+
+.modal-window__title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 49px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    /*text-align: center;*/
+}
+
+.modal-window__button-close {
+    background-color: #232323;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+.modal-window__buttons{
+    /*justify-content: right;*/
+    margin-top: 5%;
+    text-align: right;
+
+}
+.modal-window--list{
+    width: 100%;
+    height: 100%;
+
+}
+.modal-window--bottom{
+width: 100%;
+    height: 100%;
+
+}
+.modal-window__list-wrapper{
+    margin-top:4%;
+    padding:0 5%;
+    background-color: #000066;
+    width: 100%;
+    height: 80%;
+
+}
+.list__left{
+    width: 60%;
+    height: 100px;
+
+
+
+}
+.list__right{
+    width: 30%px;
+    height: 100px;
+
+
+}
+.modal-window__list{
+    width: 100px;
+    height: 100px;
+
+}
