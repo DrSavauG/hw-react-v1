@@ -1,0 +1,36 @@
+.sort-by__title {
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.sort-by__title h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.6;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+
+.sort-by__select {
+    width: 60%;
+    font-family: 'Montserrat', sans-serif;
+    height: 60px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    outline: none;
+    border: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #232323;
+    color: #FFFFFF;
+}

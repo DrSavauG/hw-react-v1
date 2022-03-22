@@ -1,0 +1,26 @@
+
+.logo-wrapper {
+    display: block;
+    height: 24px;
+    width: 150px;
+    position: absolute;
+    top: 20px;
+    left: 5%;
+}
+.logo-wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.header-home-wrapper{
+    z-index: 1;
+    height: 396px;
+    width: 100vw;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../assets/images/Bitmap.png);
+    border-bottom: 10px solid #888888   ;
+}

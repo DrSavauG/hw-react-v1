@@ -1,0 +1,13 @@
+
+.footer {
+    background-color: #424242;
+    height: 70px;
+    display: flex;
+}
+.footer img {
+    height: 18px;
+    width: 151px;
+    margin:auto;
+
+}
+
