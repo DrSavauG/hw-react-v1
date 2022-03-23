@@ -4,6 +4,7 @@ import {useForm} from "react-hook-form";
 import buttonClose from '../../assets/icons/close-button.svg';
 import Button from "../HeaderHome/FindYourMovieForm/Button/Button";
 import Input from "./Input/Input";
+import MultiSelected from "./MultiSelected/MultiSelected";
 
 
 const AddPage = () => {
@@ -25,7 +26,7 @@ const AddPage = () => {
                             <div className={'list__left'}>
                                 <Input key={'title'} title={'title'} register={register} errors={errors}/>
                                 <Input key={'movie url'} title={'movie url'} register={register} errors={errors}/>
-                                <Input key={'genre'} title={'genre'} register={register} errors={errors}/>
+                                <MultiSelected key={'genre'} title={'genre'} register={register} errors={errors}/>
                             </div>
                             <div className={'list__right'}>
                                 <Input key={'release date'} title={'release date'} type={'date'} register={register} errors={errors}/>
