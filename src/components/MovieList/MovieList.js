@@ -10,7 +10,7 @@ const MovieList = (props) => {
             <h3 className={'movie-list-h3'}>{props.movieLists.length} movies found</h3>
             <div className={'movie-list'}>
                 {props.movieLists.map((el) => (
-                    < MovieItem key={el.name} data={el}/>
+                    <MovieItem key={el.name} data={el}/>
                 ))}
             </div>
         </ErrorBoundary>

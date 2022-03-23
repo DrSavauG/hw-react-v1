@@ -1,6 +1,6 @@
 import React from "react";
 
-function Input({ register, title, errors,type='text'}) {
+function Input({register, title, errors, type = 'text'}) {
 
     return (
         <label className={'film-element'}>
