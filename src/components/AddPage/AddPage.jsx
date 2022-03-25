@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
 import './addpage-style.css';
-import {Controller,useForm} from "react-hook-form";
+import {useForm} from "react-hook-form";
 import buttonClose from '../../assets/icons/close-button.svg';
 import Button from "../HeaderHome/FindYourMovieForm/Button/Button";
 import Input from "./Input/Input";
 import MultiSelected from "./MultiSelected/MultiSelected";
+import Overview from "./Overview/Overview";
 
 
 const AddPage = () => {
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
     const [selectGenre, setSelectGenre] = useState([])
+
     const onSubmit = (data) => {
         data.genre = selectGenre.map((item) => item.value)
         console.log(data);
@@ -26,18 +28,19 @@ const AddPage = () => {
                     <div className={'modal-window__list'}>
                         <div className={'modal-window--top'}>
                             <div className={'list__left'}>
-                                <Input key={'title'} title={'title'} register={register} errors={errors}/>
-                                <Input key={'movie url'} title={'movie url'} register={register} errors={errors}/>
-                                <MultiSelected selectGenre={selectGenre} setSelectGenre={setSelectGenre} title={'genre'}/>
+                                <Input title={'title'} register={register} errors={errors}/>
+                                <Input title={'movie url'} register={register} errors={errors}/>
+                                <MultiSelected selectGenre={selectGenre} setSelectGenre={setSelectGenre}
+                                               title={'genre'}/>
                             </div>
                             <div className={'list__right'}>
-                                <Input key={'release date'} title={'release date'} type={'date'} register={register} errors={errors}/>
-                                <Input key={'rating'} title={'rating'} register={register} type={'number'} errors={errors}/>
-                                <Input key={'runtime'} title={'runtime'} register={register} errors={errors}/>
+                                <Input title={'release date'} type={'date'} register={register} errors={errors}/>
+                                <Input title={'rating'} register={register} type={'number'} errors={errors}/>
+                                <Input title={'runtime'} register={register} errors={errors}/>
                             </div>
                         </div>
                         <div className={'modal-window--bottom'}>
-                            <Input key={'title'} title={'title'} register={register} errors={errors}/>
+                            <Overview  register={register} errors={errors}/>
                         </div>
                     </div>
                     <div className={'modal-window__buttons'}>

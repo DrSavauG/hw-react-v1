@@ -35,7 +35,7 @@
     top: 30px;
 }
 .modal-window__buttons{
-    /*margin-top: 5%;*/
+    margin-top: 5%;
     text-align: right;
 
 }
@@ -49,7 +49,7 @@
     padding:0 5%;
     /*background-color: #000066;*/
     width: 100%;
-    height: 80%;
+    height: 100%;
 }
 .list__left{
     width: 60%;
@@ -61,7 +61,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
 }
 
 /*.film-element p{*/
@@ -98,9 +98,8 @@
 }
 
 
-
 .modal-window--top {
-    height: 60%;
+    /*height: 60%;*/
     display: flex;
     justify-content: space-between;
     /*padding-top: 4%;*/
