@@ -5,19 +5,16 @@ import HeadMain from "../HeadMain/HeadMain";
 import NAVIGATION from "../../utils/navigation";
 import SORTLISTS from "../../utils/sortlists";
 import MovieList from "../MovieList/MovieList";
-import movieLists from "../../utils/movielist";
 
-const HomePage = () => {
+const HomePage = ({children}) => {
     return (
-        <>
             <div className="App">
                 <HeaderHome/>
                 <main>
                     <HeadMain NAVIGATION={NAVIGATION} SORTLISTS={{SORTLISTS}}/>
-                    <MovieList movieLists={movieLists}/>
+                    <MovieList>{children}</MovieList>
                 </main>
             </div>
-        </>
     )
 }
 
