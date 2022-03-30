@@ -1,7 +1,8 @@
 import React from "react";
 import './style.css';
 
-function Input({register, title, errors, type = 'text'}) {
+function Input({children}) {
+    const {register, title, errors, type = 'text'} = children;
 
     return (
         <label className={'film-element'}>
