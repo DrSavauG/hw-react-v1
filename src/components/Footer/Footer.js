@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './style.css';
-import Logo from "../Logo/Logo";
 
 const Footer = ({children}) => {
     return (
@@ -9,7 +8,6 @@ const Footer = ({children}) => {
                 {children}
             </div>
         </footer>
-
     );
 };
 

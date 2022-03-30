@@ -2,8 +2,6 @@ import React from 'react';
 import './style.css'
 import HeaderHome from "../HeaderHome/HeaderHome";
 import HeadMain from "../HeadMain/HeadMain";
-import NAVIGATION from "../../utils/navigation";
-import SORTLISTS from "../../utils/sortlists";
 import MovieList from "../MovieList/MovieList";
 
 const HomePage = ({children}) => {
@@ -11,7 +9,7 @@ const HomePage = ({children}) => {
             <div className="App">
                 <HeaderHome/>
                 <main>
-                    <HeadMain NAVIGATION={NAVIGATION} SORTLISTS={{SORTLISTS}}/>
+                    <HeadMain/>
                     <MovieList>{children}</MovieList>
                 </main>
             </div>

@@ -10,7 +10,7 @@ const MovieList = ({children}) => {
             <h3 className={'movie-list-h3'}>{children.length} movies found</h3>
             <div className={'movie-list'}>
                 {children.map((el) => (
-                    <MovieItem key={el.name} data={el}/>
+                    <MovieItem key={el.name}>{el}</MovieItem>
                 ))}
             </div>
         </ErrorBoundary>

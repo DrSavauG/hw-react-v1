@@ -10,7 +10,6 @@ import AuthPage from "../AuthPage/AuthPage";
 import Layout from "../Layout/Layout";
 import movieLists from "../../utils/movielist";
 
-
 const AppRouter = () => {
     return (
         <BrowserRouter>
@@ -26,7 +25,6 @@ const AppRouter = () => {
             </Routes>
         </BrowserRouter>
     );
-
 };
 
 export default AppRouter;

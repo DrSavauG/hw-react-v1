@@ -4,7 +4,6 @@ import './style.css';
 import {ErrorBoundary} from 'react-error-boundary';
 import ErrorFallback from "../ErrorFallback/ErrorFallback";
 
-
 const Logo = () => {
     return (
         <ErrorBoundary FallbackComponent={ErrorFallback}>

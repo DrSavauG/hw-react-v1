@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './style.css'
 import NavigationMain from "../NavigationMain/NavigationMain";
 import SortBy from "../SortBy/SortBy";
+import {MyContext} from "../../App";
 
-const HeadMain = ({SORTLISTS,NAVIGATION}) => {
+
+
+
+const HeadMain = () => {
+    const {NAVIGATION,SORTLISTS} = useContext(MyContext);
     return (
         <div className={'main-header'}>
-            <NavigationMain NAVIGATION={NAVIGATION}/>
-            <SortBy SORTLISTS={SORTLISTS}/>
+            <NavigationMain>{NAVIGATION}</NavigationMain>
+            <SortBy>{SORTLISTS}</SortBy>
         </div>
     );
 };
