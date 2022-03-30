@@ -3,9 +3,8 @@ import './style.css';
 import {ErrorBoundary} from 'react-error-boundary';
 import ErrorFallback from "../ErrorFallback/ErrorFallback";
 
-const SortBy = (props) => {
-    const SORTLISTS = props.SORTLISTS.SORTLISTS
-    const [checked, setChecked] = useState(SORTLISTS[0]);
+const SortBy = ({children}) => {
+    const [checked, setChecked] = useState(children[0]);
 
     return (
         <label className="sort-by__title">
@@ -16,7 +15,7 @@ const SortBy = (props) => {
                     onChange={(e) => setChecked(e.target.value)}
                     value={checked}
                 >
-                    {SORTLISTS.map((el) => (
+                    {React.Children.map(children,(el) => (
                         <option key={el} className="sorting__el" value={el}>
                             {el}
                         </option>

@@ -1,16 +1,17 @@
 import React from 'react';
 import './style.css';
 
-const MovieItem = (props) => {
+const MovieItem = ({children}) => {
+    const {name, url, genre, year} = children;
     return (
         <div className={'movie-item'}>
-            <img className={'movie-item__poster'} alt={props.data.name} src={props.data.url}/>
+            <img className={'movie-item__poster'} alt={name} src={url}/>
             <div className={"movie-item__data"}>
                 <div>
-                    <div className={'data-name'}>{props.data.name}</div>
-                    <div className={'data-genre'}>{props.data.genre}</div>
+                    <div className={'data-name'}>{name}</div>
+                    <div className={'data-genre'}>{genre}</div>
                 </div>
-            <div className={'data-year'}>{props.data.year}</div>
+                <div className={'data-year'}>{year}</div>
             </div>
         </div>
     )

@@ -13,7 +13,6 @@ const FindYourMovieForm = () => {
                     </div>
                 </label>
             </div>
-
     );
 };
 

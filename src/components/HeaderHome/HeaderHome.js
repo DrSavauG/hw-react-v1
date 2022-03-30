@@ -7,12 +7,12 @@ import {Link} from "react-router-dom";
 
 const HeaderHome = () => {
     return (
-        <>
             <div className={'header-home-wrapper'}>
-                <Link to={'/add'}><Button title={"+ add movie"} className={'button button__add-movie'}/></Link>
+                <Link to={'/add'}>
+                    <Button title={"+ add movie"} className={'button button__add-movie'}/>
+                </Link>
                 <FindYourMovieForm/>
             </div>
-        </>
     )
 };
 

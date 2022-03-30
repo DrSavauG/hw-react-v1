@@ -2,17 +2,14 @@ import React from 'react';
 import {Outlet} from "react-router-dom";
 import Logo from "../Logo/Logo";
 import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 const Layout = () => {
     return (
         <>
-            <header>
-                <div className={"logo-wrapper"}>
-                    <Logo/>
-                </div>
-            </header>
-                <Outlet/>
-            <Footer/>
+            <Header><Logo/></Header>
+            <Outlet/>
+            <Footer><Logo/></Footer>
         </>
     )
 }

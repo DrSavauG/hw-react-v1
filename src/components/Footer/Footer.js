@@ -1,15 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './style.css';
-import Logo from "../Logo/Logo";
 
-const Footer = () => {
+const Footer = ({children}) => {
     return (
         <footer>
             <div className={"footer"}>
-                <Logo/>
+                {children}
             </div>
         </footer>
-
     );
 };
 

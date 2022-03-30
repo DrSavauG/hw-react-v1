@@ -1,0 +1,17 @@
+.login-window{
+
+}
+
+.login-wrapper {
+    height: calc(100% - 70px);
+    background-image: url("../../assets/images/123.png");
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    padding: 5% 7%;
+    /*background-size: cover;*/
+
+    /*background: #000000;*/
+    mix-blend-mode: multiply;
+}
