@@ -1,17 +1,39 @@
-.login-window{
-
-}
-
 .login-wrapper {
     height: calc(100% - 70px);
     background-image: url("../../assets/images/123.png");
-    background-color: black;
+    /*background-color: black;*/
     background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.7;
-    padding: 5% 7%;
+    width: 100%;
+    /*background-size: cover; */
+    filter:  blur(50%);
+    /*filter: url("../../assets/images/Rectangle Copy 3.png");*/
+    padding: 10% 25%;
     /*background-size: cover;*/
-
+background-position: center;
     /*background: #000000;*/
-    mix-blend-mode: multiply;
+    position: relative;
+    z-index: 1;
+display: block;
+    justify-content: center;
+}
+
+.cover{
+    /*background-image: url("../../assets/images/Rectangle Copy 3.png");*/
+    /*background-color: rgba(0, 0, 0, 0.9);*/
+    background-color: black;
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.login-window{
+    position: relative;
+    z-index: 3;
+    width: 50vw;
+    height: 50vh;
+    background-color: #000082;
+    margin: 10% auto;
 }
