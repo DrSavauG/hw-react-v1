@@ -8,7 +8,7 @@ import EditPage from "../EditPage/EditPage";
 import AddPage from "../AddPage/AddPage";
 import AuthPage from "../AuthPage/AuthPage";
 import Layout from "../Layout/Layout";
-import movieLists from "../../utils/movielist";
+import movieLists from "../../utils/movielist.json";
 
 const AppRouter = () => {
     return (
