@@ -8,7 +8,7 @@ import {MyContext} from "../../App";
 
 
 const HeadMain = () => {
-    const {NAVIGATION,SORTLISTS} = useContext(MyContext);
+    const {NAVIGATION,SORTLISTS} =useContext(MyContext).store;
     return (
         <div className={'main-header'}>
             <NavigationMain>{NAVIGATION}</NavigationMain>

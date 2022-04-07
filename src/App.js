@@ -1,13 +1,14 @@
 import './App.css';
 import AppRouter from "./components/AppRouter/AppRouter";
 import {createContext} from "react";
-import SORTLISTS from "./utils/sortlists";
-import NAVIGATION from "./utils/navigation";
-export const MyContext = createContext('context error');
+import Store from "./store/store";
+
+let store = new Store();
+export const MyContext = createContext(store);
 
 function App() {
     return (
-        <MyContext.Provider value={{NAVIGATION,SORTLISTS}}>
+        <MyContext.Provider value={{store}}>
             <AppRouter/>
         </MyContext.Provider>
     );

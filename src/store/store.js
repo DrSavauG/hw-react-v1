@@ -5,10 +5,12 @@ import NAVIGATION from "../utils/navigation";
 
 export default class Store {
 
-    // user = {} as IUser;
+    user = {};
     isAuth = false;
     isLoading = false;
     //
+    SORTLISTS =SORTLISTS;
+    NAVIGATION = NAVIGATION;
     constructor() {
         makeAutoObservable(this);
     }

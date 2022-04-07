@@ -1,19 +1,19 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import './style.css';
 import Button from "../HeaderHome/FindYourMovieForm/Button/Button";
 import ModalWindow from "../AddPage/ModalWindow/ModalWindow";
 import Input from "../AddPage/Input/Input";
 import {useForm} from "react-hook-form";
 import Form from "../AddPage/Form/Form";
+import {MyContext} from "../../App";
 
 const AuthPage = () => {
-    const [email,setEmail] = useState();//
-    const [password,setPassword] = useState();//todo what
-
+    const {store} = useContext(MyContext);
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = (arg) => {
+         const{email,password}= arg;
+         store.login(email,password)
         reset();
     }
 
