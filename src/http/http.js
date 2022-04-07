@@ -1,5 +1,6 @@
 import axios from 'axios';
-import {API_URL} from "../index";
+const API_URL="http://localhost:65534/roulette";
+
 
 const $api = axios.create({
     withCredentials: true,
