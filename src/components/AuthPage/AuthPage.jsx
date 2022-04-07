@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './style.css';
 import Button from "../HeaderHome/FindYourMovieForm/Button/Button";
 import ModalWindow from "../AddPage/ModalWindow/ModalWindow";
@@ -7,6 +7,9 @@ import {useForm} from "react-hook-form";
 import Form from "../AddPage/Form/Form";
 
 const AuthPage = () => {
+    const [email,setEmail] = useState();//
+    const [password,setPassword] = useState();//todo what
+
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
 
     const onSubmit = (data) => {
@@ -21,8 +24,8 @@ const AuthPage = () => {
                 <Form reset={reset} handleSubmit={handleSubmit}  onSubmit={onSubmit}>
                     <div className={'modal-window__list'}>
                         <div className={'modal-window--content'}>
-                            <Input>{{title: 'title', register: register, errors: errors}}</Input>
-                            <Input>{{title: 'movie url', register: register, errors: errors}}</Input>
+                            <Input>{{placeholder:"some@mail.com",defaultValue:"dr.savaug+1024@gmail.com",title: 'email', register: register, errors: errors}}</Input>
+                            <Input>{{placeholder:"some@mail.com",defaultValue:"12345",title: 'password', register: register, errors: errors}}</Input>
                         </div>
                     </div>
                     <div className={'modal-window__buttons'}>
