@@ -2,17 +2,22 @@ import {makeAutoObservable} from "mobx";
 import AuthService from "../sevices/AuthService";
 import SORTLISTS from "../utils/sortlists";
 import NAVIGATION from "../utils/navigation";
+import {API_URL} from "../http/http";
+import axios from "axios";
 
 export default class Store {
-
     user = {};
     isAuth = false;
     isLoading = false;
-    //
-    SORTLISTS =SORTLISTS;
+    SORTLISTS = SORTLISTS;
     NAVIGATION = NAVIGATION;
+
     constructor() {
         makeAutoObservable(this);
+    }
+
+    setLoading(bool) {
+        this.isLoading = bool;
     }
 
     setAuth(bool) {
@@ -55,6 +60,21 @@ export default class Store {
             this.setUser(response.data.user);
         } catch (e) {
             console.log(e.response?.data?.message);
+        }
+    }
+
+    async checkAuth() {
+        this.setLoading(true);
+        try {
+            const response = await axios.get(`${API_URL}/refresh`, {withCredentials: true})
+            console.log(response);
+            localStorage.setItem('token', response.data.accessToken);
+            this.setAuth(true);
+            this.setUser(response.data.user);
+        } catch (e) {
+            console.log(e.response?.data?.message);
+        } finally {
+            this.setLoading(false);
         }
     }
 
