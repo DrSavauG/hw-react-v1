@@ -6,8 +6,10 @@ import Input from "../AddPage/Input/Input";
 import {useForm} from "react-hook-form";
 import Form from "../AddPage/Form/Form";
 import {MyContext} from "../../App";
+import {Link} from "react-router-dom";
 
-const AuthPage = () => {
+const AuthPage = (props) => {
+    const {titlePage} = props.children;
     const {store} = useContext(MyContext);
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
 
@@ -20,7 +22,7 @@ const AuthPage = () => {
     return (
         <div className={'login-wrapper'}>
             <div className={"cover"}></div>
-            <ModalWindow title={"log in"}>
+            <ModalWindow title={titlePage}>
                 <Form reset={reset} handleSubmit={handleSubmit}  onSubmit={onSubmit}>
                     <div className={'modal-window__list'}>
                         <div className={'modal-window--content'}>
@@ -29,7 +31,9 @@ const AuthPage = () => {
                         </div>
                     </div>
                     <div className={'modal-window__buttons'}>
-                        <Button title={'reset'} type={'reset'} className={"button button-trans"}/>
+                        <Link to={'/registration'}>
+                        <Button title={'registration'} className={"button button-trans"}/>
+                        </Link>
                         <Button title={'submit'} type={'submit'} className={"button button-red"}/>
                     </div>
                 </Form>
