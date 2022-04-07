@@ -8,7 +8,7 @@ import {MyContext} from "../AppRouter/AppRouter";
 
 
 const HeadMain = () => {
-    const {NAVIGATION,SORTLISTS} =useContext(MyContext).store;
+    const {NAVIGATION,SORTLISTS} = useContext(MyContext).store;
     return (
         <div className={'main-header'}>
             <NavigationMain>{NAVIGATION}</NavigationMain>

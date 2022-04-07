@@ -1,14 +1,13 @@
 import React from 'react';
-import {Outlet} from "react-router-dom";
 import Logo from "../Logo/Logo";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
-const Layout = () => {
+const Layout = ({children}) => {
     return (
         <>
             <Header><Logo/></Header>
-            <Outlet/>
+            {children}
             <Footer><Logo/></Footer>
         </>
     )
