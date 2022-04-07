@@ -8,16 +8,20 @@ import Form from "../AddPage/Form/Form";
 import {MyContext} from "../../App";
 import {Link} from "react-router-dom";
 
-const AuthPage = (props) => {
-    const {titlePage} = props.children;
-    const {store} = useContext(MyContext);
-    const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
 
-    const onSubmit = (arg) => {
-         const{email,password}= arg;
-         store.login(email,password)
-        reset();
-    }
+const data = {
+    titlePage:'registration',
+    defaultValueMail:'',
+    defaultValuePassword:'',
+    linkTo:'/auth',
+    buttonLeftTitle:'buttonLeftTitle',
+    buttonRightTitle:'register',
+}
+
+
+const Auth = (props) => {
+    const {titlePage,defaultValueMail,defaultValuePassword,linkTo,buttonLeftTitle,buttonRightTitle,onSubmit } = props.children;
+    const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
 
     return (
         <div className={'login-wrapper'}>
@@ -26,15 +30,15 @@ const AuthPage = (props) => {
                 <Form reset={reset} handleSubmit={handleSubmit}  onSubmit={onSubmit}>
                     <div className={'modal-window__list'}>
                         <div className={'modal-window--content'}>
-                            <Input>{{placeholder:"some@mail.com",defaultValue:"dr.savaug+1024@gmail.com",title: 'email', register: register, errors: errors}}</Input>
-                            <Input>{{placeholder:"some@mail.com",defaultValue:"12345",title: 'password', register: register, errors: errors}}</Input>
+                            <Input>{{defaultValue:defaultValueMail,title: 'email', register: register, errors: errors}}</Input>
+                            <Input>{{defaultValue:defaultValuePassword,title: 'password', register: register, errors: errors}}</Input>
                         </div>
                     </div>
                     <div className={'modal-window__buttons'}>
-                        <Link to={'/registration'}>
-                        <Button title={'registration'} className={"button button-trans"}/>
+                        <Link to={linkTo}>
+                            <Button title={buttonLeftTitle} className={"button button-trans"}/>
                         </Link>
-                        <Button title={'submit'} type={'submit'} className={"button button-red"}/>
+                        <Button title={buttonRightTitle} type={'submit'} className={"button button-red"}/>
                     </div>
                 </Form>
             </ModalWindow>
@@ -42,4 +46,4 @@ const AuthPage = (props) => {
     );
 };
 
-export default AuthPage;
+export default Auth;
