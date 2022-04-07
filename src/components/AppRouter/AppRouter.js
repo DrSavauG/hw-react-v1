@@ -10,14 +10,19 @@ import Layout from "../Layout/Layout";
 import movieLists from "../../utils/movielist.json";
 import RegistrationPage from "../RegistrationPage/RegistrationPage";
 import LoginPage from "../LoginPage/LoginPage";
+import {createContext} from "react";
+import Store from "../../store/store";
+
+export const store = new Store();
+export const MyContext = createContext(store);
 
 const AppRouter = () => {
     return (
+        <MyContext.Provider value={{store}}>
         <BrowserRouter>
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
                     <Route index element={<HomePage>{movieLists}</HomePage>}/>
-
                     <Route path={'details'} element={<DetailsPage/>}/>
                     <Route path={'auth'} element={<LoginPage/>}/>
                     <Route path={'registration'} element={<RegistrationPage/>}/>
@@ -27,7 +32,9 @@ const AppRouter = () => {
                     <Route path={'*'} element={<ErrorPage/>}/>
             </Routes>
         </BrowserRouter>
-    );
+</MyContext.Provider>
+
+);
 };
 
 export default AppRouter;

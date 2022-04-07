@@ -1,26 +1,15 @@
-import React, {useContext, useState} from 'react';
+import React from 'react';
 import './style.css';
 import Button from "../HeaderHome/FindYourMovieForm/Button/Button";
 import ModalWindow from "../AddPage/ModalWindow/ModalWindow";
 import Input from "../AddPage/Input/Input";
 import {useForm} from "react-hook-form";
 import Form from "../AddPage/Form/Form";
-import {MyContext} from "../../App";
 import {Link} from "react-router-dom";
 
 
-const data = {
-    titlePage:'registration',
-    defaultValueMail:'',
-    defaultValuePassword:'',
-    linkTo:'/auth',
-    buttonLeftTitle:'buttonLeftTitle',
-    buttonRightTitle:'register',
-}
-
-
 const Auth = (props) => {
-    const {titlePage,defaultValueMail,defaultValuePassword,linkTo,buttonLeftTitle,buttonRightTitle,onSubmit } = props.children;
+    const {titlePage,defaultValueMail,defaultValuePassword,linkTo,buttonLeftTitle,buttonRightTitle,onSubmit,onClick } = props.children;
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
 
     return (
@@ -35,7 +24,7 @@ const Auth = (props) => {
                         </div>
                     </div>
                     <div className={'modal-window__buttons'}>
-                        <Link to={linkTo}>
+                        <Link to={linkTo} onClick={onClick}>
                             <Button title={buttonLeftTitle} className={"button button-trans"}/>
                         </Link>
                         <Button title={buttonRightTitle} type={'submit'} className={"button button-red"}/>

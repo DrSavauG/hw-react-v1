@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import './style.css'
 import NavigationMain from "../NavigationMain/NavigationMain";
 import SortBy from "../SortBy/SortBy";
-import {MyContext} from "../../App";
+import {MyContext} from "../AppRouter/AppRouter";
 
 
 

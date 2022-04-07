@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import '../Auth/style.css';
-import {MyContext} from "../../App";
 import Auth from "../Auth/Auth";
+import {MyContext} from "../AppRouter/AppRouter";
 
 const LoginPage = (props) => {
     const {store} = useContext(MyContext);
