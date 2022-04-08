@@ -4,6 +4,7 @@ import SORTLISTS from "../utils/sortlists";
 import NAVIGATION from "../utils/navigation";
 import {API_URL} from "../http/http";
 import axios from "axios";
+import UserService from "../sevices/UserService";
 
 export default class Store {
     user = {};
@@ -32,7 +33,7 @@ export default class Store {
         try {
             const response = await AuthService.login(email, password);
             console.log(response)
-            localStorage.setItem('token', response.data.accessToken);
+            localStorage.setItem('token', response.data.accessToken);//todo сократить функции
             this.setAuth(true);
             this.setUser(response.data.user);
         } catch (e) {
@@ -75,6 +76,16 @@ export default class Store {
             console.log(e.response?.data?.message);
         } finally {
             this.setLoading(false);
+        }
+    }
+
+    async getUsers(setUsers){
+        try{
+            const res = await UserService.fetchUsers();
+            setUsers(res.data);
+            console.log(res.data.map(el=>el.email));
+        }catch (e){
+            console.log(e.response?.data?.message);
         }
     }
 

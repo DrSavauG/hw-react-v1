@@ -8,20 +8,16 @@ const RegistrationPage = (props) => {
     const onSubmit = (arg) => {
         store.registration(arg.email, arg.password)
     };
-    const logout = () => {
-        console.log('logout');
-        store.logout();
-    }
 
     const dataRegistrationPage = {
         titlePage: 'registration',
         defaultValueMail: '',
         defaultValuePassword: '',
         linkTo: '/auth',
-        buttonLeftTitle: 'logout',
+        buttonLeftTitle: 'Log in',
         buttonRightTitle: 'register',
         onSubmit: onSubmit,
-        onClick: logout,
+        onClick: '',
     };
 
     return (
