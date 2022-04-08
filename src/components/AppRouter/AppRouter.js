@@ -6,6 +6,8 @@ import Store from "../../store/store";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import PublicRouter from "../PublicRoter/PublicRoter";
 import {observer} from "mobx-react-lite";
+import Button from "../HeaderHome/FindYourMovieForm/Button/Button";
+import IsLoading from "../IsLoading/IsLoading";
 
 export const store = new Store();
 export const MyContext = createContext(store);
@@ -14,19 +16,20 @@ const AppRouter = () => {
     useEffect(() => {
         let token = localStorage.getItem('token')
         if (token) {
-            console.log("token", token);//todo   запрос refresh на сервер
             store.checkAuth();
         }
-    }, [])
+    }, []);
+    if(store.isLoading){
+        return(<IsLoading/>)
+    }
     return (
         <MyContext.Provider value={{store}}>
-            <BrowserRouter>
-                <Layout>
-                    {store.isAuth ? <PrivateRouter/> : <PublicRouter/>}
-                </Layout>
-            </BrowserRouter>
-        </MyContext.Provider>
-
+           <BrowserRouter>
+                 <Layout>
+                     {store.isAuth ? <PrivateRouter/> : <PublicRouter/>}
+                 </Layout>
+             </BrowserRouter>
+         </MyContext.Provider>
     );
 };
 
