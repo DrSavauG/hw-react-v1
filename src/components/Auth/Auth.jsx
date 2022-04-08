@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import Button from "../HeaderHome/FindYourMovieForm/Button/Button";
+import Button from "../Button/Button";
 import ModalWindow from "../AddPage/ModalWindow/ModalWindow";
 import Input from "../AddPage/Input/Input";
 import {useForm} from "react-hook-form";
@@ -24,7 +24,7 @@ const Auth = (props) => {
                         </div>
                     </div>
                     <div className={'modal-window__buttons'}>
-                        <Link to={linkTo} onClick={onClick}>
+                        <Link to={linkTo}>
                             <Button title={buttonLeftTitle} className={"button button-trans"}/>
                         </Link>
                         <Button title={buttonRightTitle} type={'submit'} className={"button button-red"}/>

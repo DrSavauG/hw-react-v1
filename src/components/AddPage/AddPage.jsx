@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './addpage-style.css';
 import buttonClose from '../../assets/icons/close-button.svg';
-import Button from "../HeaderHome/FindYourMovieForm/Button/Button";
+import Button from "../Button/Button";
 import {Link} from "react-router-dom";
 import Form from "./Form/Form";
 import ModalWindow from "./ModalWindow/ModalWindow";

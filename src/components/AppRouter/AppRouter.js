@@ -6,7 +6,6 @@ import Store from "../../store/store";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import PublicRouter from "../PublicRoter/PublicRoter";
 import {observer} from "mobx-react-lite";
-import Button from "../HeaderHome/FindYourMovieForm/Button/Button";
 import IsLoading from "../IsLoading/IsLoading";
 
 export const store = new Store();

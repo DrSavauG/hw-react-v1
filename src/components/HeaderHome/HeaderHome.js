@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './style.css';
 import FindYourMovieForm from "./FindYourMovieForm/FindYourMovieForm";
-import Button from "./FindYourMovieForm/Button/Button";
+import Button from "../Button/Button";
 import {Link} from "react-router-dom";
 import {store} from "../AppRouter/AppRouter";
 

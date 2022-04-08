@@ -32,7 +32,6 @@ export default class Store {
     async login(email, password) {
         try {
             const response = await AuthService.login(email, password);
-            console.log(response)
             localStorage.setItem('token', response.data.accessToken);//todo сократить функции
             this.setAuth(true);
             this.setUser(response.data.user);
@@ -55,7 +54,6 @@ export default class Store {
     async registration(email, password) {
         try {
             const response = await AuthService.registration(email, password);
-            console.log(response)
             localStorage.setItem('token', response.data.accessToken);
             this.setAuth(true);
             this.setUser(response.data.user);
@@ -68,7 +66,6 @@ export default class Store {
         this.setLoading(true);
         try {
             const response = await axios.get(`${API_URL}/refresh`, {withCredentials: true})
-            console.log(response);
             localStorage.setItem('token', response.data.accessToken);
             this.setAuth(true);
             this.setUser(response.data.user);

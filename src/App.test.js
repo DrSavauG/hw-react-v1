@@ -6,7 +6,7 @@ import MovieList from "./components/MovieList/MovieList";
 import MovieItem from "./components/MovieList/MovieItem/MovieItem";
 import Logo from "./components/Logo/Logo";
 import FindYourMovieForm from "./components/HeaderHome/FindYourMovieForm/FindYourMovieForm";
-import Button from "./components/HeaderHome/FindYourMovieForm/Button/Button";
+import Button from "./components/Button/Button";
 
 describe("App", () => {
     it('renders App component', () => {

@@ -17,7 +17,6 @@ const RegistrationPage = (props) => {
         buttonLeftTitle: 'Log in',
         buttonRightTitle: 'register',
         onSubmit: onSubmit,
-        onClick: '',
     };
 
     return (

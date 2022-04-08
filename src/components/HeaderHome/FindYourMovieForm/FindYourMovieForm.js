@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import Button from "./Button/Button";
+import Button from "../../Button/Button";
 
 const FindYourMovieForm = () => {
     return (

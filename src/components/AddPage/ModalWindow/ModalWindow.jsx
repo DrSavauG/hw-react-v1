@@ -1,8 +1,4 @@
 import React from 'react';
-import Form from "../Form/Form";
-// import buttonClose from '../../assets/icons/close-button.svg';
-
-import Button from "../../HeaderHome/FindYourMovieForm/Button/Button";
 
 const ModalWindow = (props) => {
     const {title,children} = props;
