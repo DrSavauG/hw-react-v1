@@ -86,5 +86,27 @@ export default class Store {
         }
     }
 
+    async getFilms(setMovieList){
+        try{
+            const res = await UserService.fetchFilms();
+            setMovieList(res.data);
+        }catch (e){
+            console.log(e.response?.data?.message);
+        }
+    }
+
+    async addFilm(arg) {
+        try {
+            const response = await UserService.addFilm(arg);
+            localStorage.setItem('token', response.data.accessToken);//todo сократить функции
+            this.setAuth(true);
+            this.setUser(response.data.user);
+        } catch (e) {
+            console.log(e.response?.data?.message);
+        }
+    }
+
+
+
 
 }

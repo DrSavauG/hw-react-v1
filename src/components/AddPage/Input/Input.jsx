@@ -2,7 +2,7 @@ import React from "react";
 import './style.css';
 
 function Input({children}) {
-    const {placeholder,register, title, errors, type = 'text',defaultValue} = children;
+    const {placeholder,register, title, errors, type = 'text',defaultValue = title} = children;
 
     return (
         <label className={'film-element'}>

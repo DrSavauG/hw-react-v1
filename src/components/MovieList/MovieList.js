@@ -4,13 +4,13 @@ import MovieItem from "./MovieItem/MovieItem";
 import {ErrorBoundary} from 'react-error-boundary';
 import ErrorFallback from "../ErrorFallback/ErrorFallback";
 
-const MovieList = ({children}) => {
+const MovieList = (props) => {
     return (
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <h3 className={'movie-list-h3'}>{children.length} movies found</h3>
+            <h3 className={'movie-list-h3'}>{props.children.length} movies found</h3>
             <div className={'movie-list'}>
-                {children.map((el) => (
-                    <MovieItem key={el.name}>{el}</MovieItem>
+                {props.children.map((el) => (
+                    <MovieItem key={el._id}>{el}</MovieItem>
                 ))}
             </div>
         </ErrorBoundary>
