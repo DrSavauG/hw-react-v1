@@ -3,7 +3,6 @@ import '../Auth/style.css';
 import Auth from "../Auth/Auth";
 import {MyContext} from "../AppRouter/AppRouter";
 
-
 const RegistrationPage = (props) => {
     const {store} = useContext(MyContext);
     const onSubmit = (arg) => {

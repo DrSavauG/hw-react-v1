@@ -5,7 +5,6 @@ import movieLists from "../../utils/movielist.json";
 import DetailsPage from "../DetailsPage/DetailsPage";
 import EditPage from "../EditPage/EditPage";
 import AddPage from "../AddPage/AddPage";
-import ErrorPage from "../ErrorPage/ErrorPage";
 
 const PrivateRouter = () => {
     return (
