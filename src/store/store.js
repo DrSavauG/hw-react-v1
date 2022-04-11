@@ -95,6 +95,16 @@ export default class Store {
         }
     }
 
+    async getFilmById(id){
+        try{
+            const res = await UserService.getFilmById(id);
+            // setFilmData(res.data[0]);
+            console.log('res.data',res.data[0])
+        }catch (e){
+            console.log(e.response?.data?.message);
+        }
+    }
+
     async addFilm(arg) {
         try {
             const response = await UserService.addFilm(arg);
@@ -106,6 +116,28 @@ export default class Store {
         }
     }
 
+
+    async editFilm(arg) {
+        try {
+            const response = await UserService.addFilm(arg);
+            localStorage.setItem('token', response.data.accessToken);//todo сократить функции
+            this.setAuth(true);
+            this.setUser(response.data.user);
+        } catch (e) {
+            console.log(e.response?.data?.message);
+        }
+    }
+
+    async deleteFilm(arg) {
+        try {
+            const response = await UserService.deleteFilm(arg);
+            localStorage.setItem('token', response.data.accessToken);//todo сократить функции
+            this.setAuth(true);
+            this.setUser(response.data.user);
+        } catch (e) {
+            console.log(e.response?.data?.message);
+        }
+    }
 
 
 
