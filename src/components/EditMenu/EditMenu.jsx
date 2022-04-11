@@ -1,25 +1,36 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './style.css';
 import Button from "../../../src/components/Button/Button";
 import Burger from "../../../src/assets/icons/burger.svg";
-import ContextMenu from "../../components/ContextMenu/ContextMenu";
+import ContextMenu from "../../components/ContextMenu/ContextMenu.jsx";
 import {store} from "../AppRouter/AppRouter";
+import {useNavigate} from "react-router";
 
 const EditMenu = (props) => {
+    let navigate = useNavigate();
+    const {title, url, genre, release_date, runtime, _id, overview, rating} = props.filmData;
+    let [filmData,setFilmData] = useState({})
     let [burgerIsVisible, setBurgerIsVisible] = useState(true);
-    // let [filData,setFilmData] = useState({});
-    let id = props.id
+    // setFilmData(props.filmData);
+
+    // useEffect(() => {
+    //     store.getFilms(setMovieList);
+    // }, []);
+
     function onDelete(){
-        store.deleteFilm(id);
+        store.deleteFilm(_id);
+        setBurgerIsVisible(!burgerIsVisible);
     };
+
+
     function onEdit(){
-        store.getFilmById(id)
-        console.log('setFilmData',)
+        navigate('/edit',{state:props.filmData})
+            // store.getFilmById(_id);
+        // setFilmData =  store.getFilmById(id)
     };
 
 
     function onClickBurger() {
-        console.log('onClickBurger')
         setBurgerIsVisible(!burgerIsVisible);
     }
 

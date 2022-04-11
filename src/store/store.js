@@ -98,8 +98,7 @@ export default class Store {
     async getFilmById(id){
         try{
             const res = await UserService.getFilmById(id);
-            // setFilmData(res.data[0]);
-            console.log('res.data',res.data[0])
+            console.log('res.data into setFilmData',res.data[0])
         }catch (e){
             console.log(e.response?.data?.message);
         }

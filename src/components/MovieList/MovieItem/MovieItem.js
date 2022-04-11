@@ -15,7 +15,7 @@ const MovieItem = ({children}) => {
                 </div>
                 <div className={'data-year'}>{release_date.slice(0, 4)}</div>
             </div>
-            <EditMenu className={"edit-menu"} id={_id} />
+            <EditMenu className={"edit-menu"} filmData ={children} />
         </div>
     );
 };

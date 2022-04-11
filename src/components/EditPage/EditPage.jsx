@@ -1,10 +1,11 @@
 import React from 'react';
+import {useLocation} from "react-router";
+import AddPage from "../AddPage/AddPage";
 
-const EditPage = () => {
+const EditPage = (props) => {
+    const location = useLocation();
     return (
-        <div>
-            EditPage
-            </div>
+        <AddPage name={'edit movie'}>{location.state}</AddPage>
     );
 };
 

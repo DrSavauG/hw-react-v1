@@ -12,11 +12,12 @@ import Overview from "./Overview/Overview";
 import {MyContext} from "../AppRouter/AppRouter";
 
 
-const AddPage = () => {
+const AddPage = (props) => {
     const {store} = useContext(MyContext);
     // const onSubmit = (arg) => {
     //     store.login(arg.email, arg.password)
     // };
+    const {title = 'title', url='url', genre=[], release_date='2020-01-01', runtime='runtime', _id, overview='example overview', rating='5'} = props.children;
 
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
     const [selectGenre, setSelectGenre] = useState([])
@@ -30,7 +31,7 @@ const AddPage = () => {
 
     return (
         <div className={'main-wrapper '}>
-            <ModalWindow title={"add movie"}>
+            <ModalWindow title={props.name}>
                 <Link to={'/'}>
                     <Button className={'modal-window__button-close'}>
                         <img src={buttonClose}
@@ -42,20 +43,21 @@ const AddPage = () => {
                     <div className={'modal-window__list'}>
                         <div className={'modal-window--top'}>
                             <div className={'list__left'}>
-                                <Input>{{title: 'title', register: register, errors: errors}}</Input>
-                                <Input>{{title: 'url', register: register, errors: errors}}</Input>
+                                <Input>{{title: "title",defaultValue:title, register: register, errors: errors}}</Input>
+                                <Input>{{title: 'url',defaultValue:url, register: register, errors: errors}}</Input>
                                 <MultiSelected selectGenre={selectGenre} setSelectGenre={setSelectGenre}
                                                title={'genre'}/>
                             </div>
                             <div className={'list__right'}>
                                 <Input>{{
+                                    defaultValue:release_date,
                                     title: 'release_date',
                                     type: 'date',
                                     register: register,
                                     errors: errors
                                 }}</Input>
-                                <Input>{{title: 'rating', type: 'number', register: register, errors: errors}}</Input>
-                                <Input>{{title: 'runtime', register: register, errors: errors}}</Input>
+                                <Input>{{defaultValue:rating,title: 'rating', type: 'number', register: register, errors: errors}}</Input>
+                                <Input>{{defaultValue:runtime,title: 'runtime', register: register, errors: errors}}</Input>
                             </div>
                         </div>
                         <div className={'modal-window--bottom'}>
