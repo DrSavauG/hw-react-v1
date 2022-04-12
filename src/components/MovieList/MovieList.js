@@ -8,11 +8,12 @@ const MovieList = (props) => {
     return (
         <ErrorBoundary FallbackComponent={ErrorFallback}>
             <h3 className={'movie-list-h3'}>{props.children.length} movies found</h3>
+            {props.children.length?
             <div className={'movie-list'}>
                 {props.children.map((el) => (
                     <MovieItem key={el._id}>{el}</MovieItem>
                 ))}
-            </div>
+            </div>:<div className={"plugin"}>nothing found</div>}
         </ErrorBoundary>
 
     );

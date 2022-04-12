@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {useLocation} from "react-router";
+import {useLocation, useNavigate} from "react-router";
 import AddPage from "../AddPage/AddPage";
 import {MyContext} from "../AppRouter/AppRouter";
 
@@ -12,22 +12,29 @@ function toObject(arr) {
 }
 
 const EditPage = (props) => {
+    const navigate = useNavigate();
     const location = useLocation();
     const {store} = useContext(MyContext);
 
-if(location.state === null){
-    location.state = {};
-    location.state.filmData = {};
-}
-    const {title='title', url='url', release_date='2020-01-01', runtime='runtime', _id='', overview='example overview', genre=[], rating='5'} = location.state.filmData;
+    if (location.state === null) {
+        location.state = {};
+        location.state.filmData = {};
+    }
+    const {
+        title = 'title',
+        url = 'url',
+        release_date = '2020-01-01',
+        runtime = 'runtime',
+        _id = '',
+        overview = 'example overview',
+        genre = [],
+        rating = '5'
+    } = location.state.filmData;
+    const [selectGenre, setSelectGenre] = useState(toObject(genre));
 
-
-
-    const [selectGenre, setSelectGenre] = useState(toObject(genre))
-    console.log('location.pathname', location.pathname)
     const onSubmit = (data) => {
         data.genre = selectGenre.map((item) => item.value);
-        location.pathname === '/edit' ? store.editFilm(_id,data) : store.addFilm(data);
+        location.pathname === '/edit' ? store.editFilm(_id, data).then(navigate('/')) : store.addFilm(data).then(navigate('/'));
         // reset();
     }
 
