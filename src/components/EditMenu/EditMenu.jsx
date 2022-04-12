@@ -8,25 +8,16 @@ import {useNavigate} from "react-router";
 
 const EditMenu = (props) => {
     let navigate = useNavigate();
-    const {title, url, genre, release_date, runtime, _id, overview, rating} = props.filmData;
-    let [filmData,setFilmData] = useState({})
     let [burgerIsVisible, setBurgerIsVisible] = useState(true);
-    // setFilmData(props.filmData);
-
-    // useEffect(() => {
-    //     store.getFilms(setMovieList);
-    // }, []);
 
     function onDelete(){
-        store.deleteFilm(_id);
+        store.deleteFilm(props.filmData._id);
         setBurgerIsVisible(!burgerIsVisible);
     };
 
 
     function onEdit(){
-        navigate('/edit',{state:props.filmData})
-            // store.getFilmById(_id);
-        // setFilmData =  store.getFilmById(id)
+        navigate('/edit',{state:{filmData:props.filmData}})
     };
 
 

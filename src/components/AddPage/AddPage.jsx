@@ -13,22 +13,8 @@ import {MyContext} from "../AppRouter/AppRouter";
 
 
 const AddPage = (props) => {
-    const {store} = useContext(MyContext);
-    // const onSubmit = (arg) => {
-    //     store.login(arg.email, arg.password)
-    // };
-    const {title = 'title', url='url', genre=[], release_date='2020-01-01', runtime='runtime', _id, overview='example overview', rating='5'} = props.children;
-
+    const {title, url, release_date,genre, runtime, _id, overview, rating,selectGenre,onSubmit,setSelectGenre} = props.children;
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
-    const [selectGenre, setSelectGenre] = useState([])
-
-    const onSubmit = (data) => {
-        data.genre = selectGenre.map((item) => item.value)
-        console.log(data);
-        store.addFilm(data);
-        // reset();
-    }
-
     return (
         <div className={'main-wrapper '}>
             <ModalWindow title={props.name}>
@@ -61,7 +47,7 @@ const AddPage = (props) => {
                             </div>
                         </div>
                         <div className={'modal-window--bottom'}>
-                            <Overview register={register} errors={errors}/>
+                            <Overview name={'overview'} register={register} errors={errors} defaultValue={overview}></Overview>
                         </div>
                     </div>
                     <div className={'modal-window__buttons'}>

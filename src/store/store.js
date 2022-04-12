@@ -116,9 +116,9 @@ export default class Store {
     }
 
 
-    async editFilm(arg) {
+    async editFilm(_id,data) {
         try {
-            const response = await UserService.addFilm(arg);
+            const response = await UserService.editFilm(_id,data);
             localStorage.setItem('token', response.data.accessToken);//todo сократить функции
             this.setAuth(true);
             this.setUser(response.data.user);

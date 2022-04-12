@@ -15,9 +15,9 @@ export default class UserService {
     static addFilm(arg) {
         return $api.post('/films', {arg});
     }
-    // static editFilm(arg) {
-    //     return $api.post('/films', {arg});
-    // }
+    static editFilm(_id,arg) {
+        return $api.put(`/films/${_id}`, {arg});
+    }
     static deleteFilm(_id){
         return $api.delete(`/films/${_id}`)
     }

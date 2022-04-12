@@ -13,15 +13,17 @@ const options = [
 
 const MultiSelected = ({ title, selectGenre, setSelectGenre}) => {
 
+
     const change = (arr) => {
         setSelectGenre(arr)
     }
 
-// todo: прокинуть выше
     return (
         <div className={'film-element'}>
          {title}
                 <MultiSelect
+                    disableSearch={true}
+                    hasSelectAll={false}
                     className="dark"
                     options={options}
                     value={selectGenre}
