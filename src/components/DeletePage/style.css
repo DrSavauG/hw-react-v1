@@ -1,0 +1,22 @@
+.delete-page-content{
+    /*position: relative;*/
+    /*padding-left: 5%;*/
+}
+
+.delete-page-content p{
+    margin: 10% 10% 15% 5%;
+
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    /*text-align: center;*/
+    color: #FFFFFF;
+}
+
+.delete-btn-confirm{
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+}

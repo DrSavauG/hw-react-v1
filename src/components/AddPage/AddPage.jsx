@@ -16,14 +16,7 @@ const AddPage = (props) => {
     const {title, url, release_date,genre, runtime, _id, overview, rating,selectGenre,onSubmit,setSelectGenre} = props.children;
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
     return (
-        <div className={'main-wrapper '}>
             <ModalWindow title={props.name}>
-                <Link to={'/'}>
-                    <Button className={'modal-window__button-close'}>
-                        <img src={buttonClose}
-                             alt={'close'}/>
-                    </Button>
-                </Link>
                 <Form reset={reset} handleSubmit={handleSubmit} selectGenre={selectGenre}
                       setSelectGenre={setSelectGenre} onSubmit={onSubmit}>
                     <div className={'modal-window__list'}>
@@ -56,7 +49,6 @@ const AddPage = (props) => {
                     </div>
                 </Form>
             </ModalWindow>
-        </div>
     );
 };
 

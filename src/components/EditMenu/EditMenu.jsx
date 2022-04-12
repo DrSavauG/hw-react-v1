@@ -11,12 +11,14 @@ const EditMenu = (props) => {
     let [burgerIsVisible, setBurgerIsVisible] = useState(true);
 
     function onDelete(){
-        store.deleteFilm(props.filmData._id);
+        // store.deleteFilm(props.filmData._id);
         setBurgerIsVisible(!burgerIsVisible);
+        navigate('/delete',{state:{filmId:props.filmData._id}})
     };
 
 
     function onEdit(){
+        setBurgerIsVisible(!burgerIsVisible);
         navigate('/edit',{state:{filmData:props.filmData}})
     };
 
