@@ -11,7 +11,7 @@ const MovieItem = ({children}) => {
             <div className={"movie-item__data"}>
                 <div>
                     <div className={'data-name'}>{title}</div>
-                    <div className={'data-genre'}>{genre.map(el => el)}</div>
+                    <div className={'data-genre'}>{genre.map(el => el+' ')}</div>
                 </div>
                 <div className={'data-year'}>{release_date.slice(0, 4)}</div>
             </div>

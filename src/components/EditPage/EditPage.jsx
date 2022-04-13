@@ -2,6 +2,10 @@ import React, {useContext, useState} from 'react';
 import {useLocation, useNavigate} from "react-router";
 import AddPage from "../AddPage/AddPage";
 import {MyContext} from "../AppRouter/AppRouter";
+import ModalWindow from "../AddPage/ModalWindow/ModalWindow";
+import checked from "../../../src/assets/icons/checked-red.svg";
+import './style.css';
+
 
 function toObject(arr) {
     const result = [];
@@ -20,21 +24,28 @@ const EditPage = (props) => {
         location.state = {};
         location.state.filmData = {};
     }
+
     const {
-        title = 'title',
-        url = 'url',
-        release_date = '2020-01-01',
-        runtime = 'runtime',
+        title = '',
+        url = '',
+        release_date = '',
+        runtime = '',
         _id = '',
         overview = 'example overview',
         genre = [],
-        rating = '5'
+        rating = ''
     } = location.state.filmData;
+
     const [selectGenre, setSelectGenre] = useState(toObject(genre));
+    let [isDone, setIsDone] = useState(false);
 
     const onSubmit = (data) => {
-        data.genre = selectGenre.map((item) => item.value);
-        location.pathname === '/edit' ? store.editFilm(_id, data).then(navigate('/')) : store.addFilm(data).then(navigate('/'));
+        console.log(data);
+        data.title = data.title.toLowerCase();
+        data.genre = selectGenre.map((item) => item.value.toLowerCase());
+        // location.pathname === '/edit' ? store.editFilm(_id, data).then(navigate('/')) : store.addFilm(data).then(navigate('/'));
+        location.pathname === '/edit' ? store.editFilm(_id, data) : store.addFilm(data);
+        setIsDone(!isDone);
         // reset();
     }
 
@@ -52,7 +63,17 @@ const EditPage = (props) => {
         rating: rating
     }
     return (
-        <AddPage name={location.pathname === '/edit' ?'edit movie':'add movie'}>{editData}</AddPage>
+        <>
+        {
+            isDone?
+            <ModalWindow title={"congratulations !"} className={'congratulations'}>
+                <img className={"congratulations-checked"} src={checked}
+                     alt={'checked'}/>
+            </ModalWindow>
+            :
+            <AddPage name={location.pathname === '/edit' ? 'edit movie' : 'add movie'}>{editData}</AddPage>
+        }
+        </>
     );
 };
 

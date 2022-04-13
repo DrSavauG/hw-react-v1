@@ -1,15 +1,12 @@
-import React, {useContext, useState} from 'react';
+import React from 'react';
 import './addpage-style.css';
-import buttonClose from '../../assets/icons/close-button.svg';
 import Button from "../Button/Button";
-import {Link} from "react-router-dom";
 import Form from "./Form/Form";
 import ModalWindow from "./ModalWindow/ModalWindow";
 import {useForm} from "react-hook-form";
 import MultiSelected from "./MultiSelected/MultiSelected";
 import Input from "./Input/Input";
 import Overview from "./Overview/Overview";
-import {MyContext} from "../AppRouter/AppRouter";
 
 
 const AddPage = (props) => {
