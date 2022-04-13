@@ -17,8 +17,8 @@ const AddPage = (props) => {
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
     return (
             <ModalWindow title={props.name}>
-                <Form reset={reset} handleSubmit={handleSubmit} selectGenre={selectGenre}
-                      setSelectGenre={setSelectGenre} onSubmit={onSubmit}>
+                <Form reset={reset} handleSubmit={handleSubmit} selectValue={selectGenre}
+                      setSelectValue={setSelectGenre} onSubmit={onSubmit} className={'modal-window__list-wrapper'}>
                     <div className={'modal-window__list'}>
                         <div className={'modal-window--top'}>
                             <div className={'list__left'}>
