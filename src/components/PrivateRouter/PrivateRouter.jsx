@@ -8,7 +8,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 const PrivateRouter = () => {
     return (
         <Routes>
-            <Route path={'/'} element={<HomePage></HomePage>}/>
+            <Route path={'/'} element={<HomePage/>}/>
             <Route path={'/delete'} element={<DeletePage name={'delete movie'}/>}/>
             <Route path={'/edit'} element={<EditPage/>}/>
             <Route path={'/add'} element={<EditPage/>}/>
