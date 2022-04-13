@@ -8,11 +8,10 @@ import {MyContext} from "../AppRouter/AppRouter";
 
 
 const HeadMain = () => {
-    const {NAVIGATION,SORTLISTS} = useContext(MyContext).store;
     return (
         <div className={'main-header'}>
-            <NavigationMain>{NAVIGATION}</NavigationMain>
-            <SortBy>{SORTLISTS}</SortBy>
+            <NavigationMain/>
+            <SortBy/>
         </div>
     );
 };

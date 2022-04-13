@@ -4,27 +4,32 @@ import ErrorFallback from "../ErrorFallback/ErrorFallback";
 import './style.css';
 import {store} from "../AppRouter/AppRouter";
 
-const NavigationMain = ({children}) => {
-    const [activeGenre, setActiveGenre] = useState(children[0]);
+const NavigationMain = () => {
+    const [activeGenre, setActiveGenre] = useState(store.NAVIGATION[0]);
+    store.activeGenre = activeGenre;
+    store.setActiveGenre = setActiveGenre;
 
     function doToggle(genre) {
         return activeGenre === genre ? 'genre-active' : '';
     }
-    const onClick =(el)=>{
-        if(el=='all'){
-            el = [];
-        }
+
+    const onClick = (el) => {
         const params = {
-            "_deletedAt": null,
-            "genre": el
+            find: {"_deletedAt": null, "genre": el},
+            sort: {'title': -1}
         };
-        store.getFilms(store.setMovieList, params).then( setActiveGenre(el));
+
+        if (el == 'all') {
+            params.find = {"_deletedAt": null}
+        }
+        store.params = params;
+        store.getFilms(store.setMovieList, store.params).then(setActiveGenre(el));
     }
 
     return (
         <ul className={'navigation-main__ul'}>
             <ErrorBoundary FallbackComponent={ErrorFallback}>
-                {React.Children.map(children, (el) => (
+                {store.NAVIGATION.map((el) => (
                     <li key={el} className={`navigation-main-ul__li ${doToggle(el)}`}
                         onClick={(event) => onClick(el)}
                     >
