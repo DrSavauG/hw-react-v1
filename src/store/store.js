@@ -86,9 +86,9 @@ export default class Store {
         }
     }
 
-    async getFilms(setMovieList){
+    async getFilms(setMovieList,params){
         try{
-            const res = await UserService.fetchFilms();
+            const res = await UserService.fetchFilms(params);
             setMovieList(res.data);
         }catch (e){
             console.log(e.response?.data?.message);

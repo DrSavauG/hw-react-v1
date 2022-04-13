@@ -5,8 +5,8 @@ export default class UserService {
     static fetchUsers() {
         return $api.get('/users');
     }
-    static fetchFilms() {
-        return $api.get('/films');
+    static fetchFilms(params) {
+        return $api.get('/films', {params:{params}});
     }
     static getFilmById(id){
         return $api.get(`/films/${id}`);
