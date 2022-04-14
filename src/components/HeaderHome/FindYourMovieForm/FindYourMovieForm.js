@@ -13,9 +13,10 @@ const FindYourMovieForm = () => {
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
 
     const onSubmit = (data) => {
+
         const params = {
-            "_deletedAt": null,
-            "title": {$regex: data.searchValue}
+            find: {"_deletedAt": null, "title": {$regex: data.searchValue}},
+            sort: {'title': -1}
         };
         store.getFilms(store.setMovieList, params).then(navigate('/'))
         reset()
@@ -34,7 +35,7 @@ const FindYourMovieForm = () => {
                     <Button title={"search"} type={'submit'} className={'button button__search'}/>
                 </form>
             </label>
-            </div>
+        </div>
     );
 };
 

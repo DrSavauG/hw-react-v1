@@ -6,7 +6,6 @@ import ModalWindow from "../AddPage/ModalWindow/ModalWindow";
 import checked from "../../../src/assets/icons/checked-red.svg";
 import './style.css';
 
-
 function toObject(arr) {
     const result = [];
     for (const arrKey of arr) {
@@ -63,17 +62,17 @@ const EditPage = (props) => {
         rating: rating
     }
     return (
-        <>
-        {
-            isDone?
-            <ModalWindow title={"congratulations !"} className={'congratulations'}>
-                <img className={"congratulations-checked"} src={checked}
-                     alt={'checked'}/>
-            </ModalWindow>
-            :
-            <AddPage name={location.pathname === '/edit' ? 'edit movie' : 'add movie'}>{editData}</AddPage>
-        }
-        </>
+        <div className={'main-wrapper '}>
+            {
+                isDone ?
+                    <ModalWindow title={"congratulations!"} className={'congratulations'}>
+                        <img className={"congratulations-checked"} src={checked}
+                             alt={'checked'}/>{<p>The movie has been added to database successfully</p>}
+                    </ModalWindow>
+                    :
+                    <AddPage name={location.pathname === '/edit' ? 'edit movie' : 'add movie'}>{editData}</AddPage>
+            }
+        </div>
     );
 };
 

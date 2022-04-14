@@ -19,15 +19,16 @@ const DeletePage = (props) => {
     };
 
     return (
-        <ModalWindow title={props.name}>
-            <div className={'delete-page-content'}>
-                <p>{deletePageData.text}</p>
-                <Button onClick={()=> {
-                    store.deleteFilm(deletePageData._id).then(navigate('/'));
-                }} title={'confirm'} type={'submit'} className={"button button-red delete-btn-confirm"}/>
-            </div>
-
-        </ModalWindow>
+        <div className={'main-wrapper '}>
+            <ModalWindow title={props.name} className={'delete-page'}>
+                <div className={'delete-page-content'}>
+                    <p>{deletePageData.text}</p>
+                    <Button onClick={() => {
+                        store.deleteFilm(deletePageData._id).then(navigate('/'));
+                    }} title={'confirm'} type={'submit'} className={"button button-red delete-btn-confirm"}/>
+                </div>
+            </ModalWindow>
+        </div>
     );
 };
 

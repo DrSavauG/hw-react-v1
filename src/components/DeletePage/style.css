@@ -1,6 +1,6 @@
-.delete-page-content{
-    /*position: relative;*/
-    /*padding-left: 5%;*/
+.delete-page{
+    width: 50%;
+    margin: auto;
 }
 
 .delete-page-content p{
@@ -11,7 +11,6 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    /*text-align: center;*/
     color: #FFFFFF;
 }
 

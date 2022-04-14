@@ -13,12 +13,12 @@ export const MyContext = createContext(store);
 
 const AppRouter = () => {
 
+    let token = localStorage.getItem('token');
     useEffect(() => {
-        let token = localStorage.getItem('token')
         if (token) {
             store.checkAuth();
         }
-    }, []);
+    }, [token]);
 
     if(store.isLoading){
         return(<IsLoading/>)

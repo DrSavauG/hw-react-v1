@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 
 const ModalWindow = (props) => {
     return (
-        <div className={'main-wrapper '}>
             <div className={'modal-window '+props.className}>
                 <h2 className={'modal-window__title'}>{props.title}</h2>
                 <Link to={'/'}>
@@ -16,8 +15,6 @@ const ModalWindow = (props) => {
                 </Link>
                 {props.children}
             </div>
-        </div>
-
     );
 };
 
