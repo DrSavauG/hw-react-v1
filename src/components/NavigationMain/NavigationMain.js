@@ -1,21 +1,37 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {ErrorBoundary} from 'react-error-boundary';
 import ErrorFallback from "../ErrorFallback/ErrorFallback";
 import './style.css';
+import {MyContext} from "../AppRouter/AppRouter";
 
-const NavigationMain = ({children}) => {
-    const [activeGenre, setActiveGenre] = useState(children[0]);
+const NavigationMain = () => {
+    const {store} = useContext(MyContext);
+    const [activeGenre, setActiveGenre] = useState(store.NAVIGATION[0]);
+    store.activeGenre = activeGenre;
+    store.setActiveGenre = setActiveGenre;
 
     function doToggle(genre) {
         return activeGenre === genre ? 'genre-active' : '';
     }
 
+    const onClick = (el) => {
+        let find = {
+          "_deletedAt": null, "genre": el
+        };
+
+        if (el === 'all') {
+            find = {"_deletedAt": null}
+        }
+        store.params.find = find;
+        store.getFilms(store.setMovieList, store.params).then(setActiveGenre(el));
+    }
+
     return (
         <ul className={'navigation-main__ul'}>
             <ErrorBoundary FallbackComponent={ErrorFallback}>
-                {React.Children.map(children, (el) => (
+                {store.NAVIGATION.map((el) => (
                     <li key={el} className={`navigation-main-ul__li ${doToggle(el)}`}
-                        onClick={(event) => setActiveGenre(el)}
+                        onClick={(event) => onClick(el)}
                     >
                         {el}
                     </li>

@@ -8,7 +8,6 @@
     width: 177px;
     background: rgba(96, 96, 96, 0.68);
     border-radius: 4px;
-
 }
 .button__search{
     height: 57px;
@@ -50,4 +49,9 @@
     color: white;
     background: #F65261;
 }
-
+.button-logout{
+    right: 250px;
+}
+.button-getUsers{
+    right: 500px;
+}

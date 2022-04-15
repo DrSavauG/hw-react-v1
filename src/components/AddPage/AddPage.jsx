@@ -1,8 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './addpage-style.css';
-import buttonClose from '../../assets/icons/close-button.svg';
-import Button from "../HeaderHome/FindYourMovieForm/Button/Button";
-import {Link} from "react-router-dom";
+import Button from "../Button/Button";
 import Form from "./Form/Form";
 import ModalWindow from "./ModalWindow/ModalWindow";
 import {useForm} from "react-hook-form";
@@ -11,49 +9,35 @@ import Input from "./Input/Input";
 import Overview from "./Overview/Overview";
 
 
-const AddPage = () => {
-
+const AddPage = (props) => {
+    const {title, url, release_date,genre, runtime, _id, overview, rating,selectGenre,onSubmit,setSelectGenre} = props.children;
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
-    const [selectGenre, setSelectGenre] = useState([])
-
-    const onSubmit = (data) => {
-        data.genre = selectGenre.map((item) => item.value)
-        console.log(data);
-        reset();
-    }
-
     return (
-        <div className={'main-wrapper '}>
-            <ModalWindow title={"add movie"}>
-                <Link to={'/'}>
-                    <Button className={'modal-window__button-close'}>
-                        <img src={buttonClose}
-                             alt={'close'}/>
-                    </Button>
-                </Link>
-                <Form reset={reset} handleSubmit={handleSubmit} selectGenre={selectGenre}
-                      setSelectGenre={setSelectGenre} onSubmit={onSubmit}>
+            <ModalWindow title={props.name}>
+                <Form reset={reset} handleSubmit={handleSubmit} selectValue={selectGenre}
+                      setSelectValue={setSelectGenre} onSubmit={onSubmit} className={'modal-window__list-wrapper'}>
                     <div className={'modal-window__list'}>
                         <div className={'modal-window--top'}>
                             <div className={'list__left'}>
-                                <Input>{{title: 'title', register: register, errors: errors}}</Input>
-                                <Input>{{title: 'movie url', register: register, errors: errors}}</Input>
+                                <Input>{{title: "title",defaultValue:title, register: register, errors: errors}}</Input>
+                                <Input>{{title: 'url',defaultValue:url, register: register, errors: errors}}</Input>
                                 <MultiSelected selectGenre={selectGenre} setSelectGenre={setSelectGenre}
                                                title={'genre'}/>
                             </div>
                             <div className={'list__right'}>
                                 <Input>{{
-                                    title: 'release date',
+                                    defaultValue:release_date,
+                                    title: 'release_date',
                                     type: 'date',
                                     register: register,
                                     errors: errors
                                 }}</Input>
-                                <Input>{{title: 'rating', type: 'number', register: register, errors: errors}}</Input>
-                                <Input>{{title: 'runtime', register: register, errors: errors}}</Input>
+                                <Input>{{defaultValue:rating,title: 'rating', type: 'number', register: register, errors: errors}}</Input>
+                                <Input>{{defaultValue:runtime,title: 'runtime', register: register, errors: errors}}</Input>
                             </div>
                         </div>
                         <div className={'modal-window--bottom'}>
-                            <Overview register={register} errors={errors}/>
+                            <Overview name={'overview'} register={register} errors={errors} defaultValue={overview}></Overview>
                         </div>
                     </div>
                     <div className={'modal-window__buttons'}>
@@ -62,7 +46,6 @@ const AddPage = () => {
                     </div>
                 </Form>
             </ModalWindow>
-        </div>
     );
 };
 

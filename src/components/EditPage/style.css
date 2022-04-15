@@ -1,0 +1,25 @@
+.congratulations {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    width: 50%;
+    color: #FFFFFF;
+    margin: auto;
+}
+
+.congratulations p {
+    margin-bottom: 70px;
+}
+
+.congratulations h2 {
+    margin: 200px 0 10% 0;
+}
+
+.congratulations-checked{
+    position: absolute;
+    left: 47%;
+    top: 20%;
+}

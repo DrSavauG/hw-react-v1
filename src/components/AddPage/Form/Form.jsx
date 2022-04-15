@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
 const Form = (props) => {
-    const {handleSubmit,reset,selectGenre,setSelectGenre,onSubmit} = props;
+    const {handleSubmit,reset,selectValue,setSelectValue,onSubmit,className} = props;
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className={'modal-window__list-wrapper'}>
+        <form onSubmit={handleSubmit(onSubmit)} className={className}>
             {props.children[0]}
             {props.children[1]}
         </form>

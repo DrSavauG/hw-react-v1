@@ -1,2 +1,2 @@
-const SORTLISTS = ['release date', 'year', '2', '3',4];
+const SORTLISTS = ["title",'release_date', 'rating', 'runtime'];
 export default SORTLISTS;

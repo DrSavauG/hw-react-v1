@@ -1,33 +1,35 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {MultiSelect} from 'react-multi-select-component';
 import './style.css';
-
-
-
-const options = [
-    { label: "crime", value: "crime" },
-    { label: "documentary", value: "documentary" },
-    { label: "horror", value: "horror",  },
-    { label: "comedy", value: "comedy", },
-];
+import {MyContext} from "../../AppRouter/AppRouter";
 
 const MultiSelected = ({ title, selectGenre, setSelectGenre}) => {
+    const {store} = useContext(MyContext);
 
-    const change = (arr) => {
-        setSelectGenre(arr)
-    }
+    const options = [];
+    const handleNewField = (value) => ({
+        label: value.toLowerCase(),
+        value: value.toLowerCase(),
+    });
+    store.NAVIGATION.map(el => el === 'all' ? '' : options.push(handleNewField(el)));
 
-// todo: прокинуть выше
     return (
         <div className={'film-element'}>
-         {title}
-                <MultiSelect
-                    className="dark"
-                    options={options}
-                    value={selectGenre}
-                    onChange={change}
-                    labelledBy="Select"
-                />
+            {title}
+            <MultiSelect
+                overrideStrings={true}
+                // closeOnChangedValue={true}
+                onCreateOption={handleNewField}
+                isCreatable={true}
+                // shouldToggleOnHover={true}
+                // disableSearch={true}
+                hasSelectAll={false}
+                className={"dark"}
+                options={options}
+                value={selectGenre}
+                onChange={setSelectGenre}
+                labelledBy="Select"
+            />
         </div>
 
     );

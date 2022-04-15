@@ -2,7 +2,20 @@
     display: flex;
     width: 322px;
     flex-direction: column;
+    position: relative;
 }
+
+.movie-item:hover .edit-menu{
+    display: inline-block;
+}
+.edit-menu{
+    display: none;
+    position: absolute;
+    right: 14px;
+    top: 10px;
+
+}
+
 
 .movie-item__poster {
     height: 455px;
