@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import './style.css';
 import {ErrorBoundary} from 'react-error-boundary';
 import ErrorFallback from "../ErrorFallback/ErrorFallback";
+import './style.css';
 
-const NavigationMain = ({NAVIGATION}) => {
-    const [activeGenre, setActiveGenre] = useState(NAVIGATION[0]);
+const NavigationMain = ({children}) => {
+    const [activeGenre, setActiveGenre] = useState(children[0]);
 
     function doToggle(genre) {
         return activeGenre === genre ? 'genre-active' : '';
@@ -13,7 +13,7 @@ const NavigationMain = ({NAVIGATION}) => {
     return (
         <ul className={'navigation-main__ul'}>
             <ErrorBoundary FallbackComponent={ErrorFallback}>
-                {NAVIGATION.map((el) => (
+                {React.Children.map(children, (el) => (
                     <li key={el} className={`navigation-main-ul__li ${doToggle(el)}`}
                         onClick={(event) => setActiveGenre(el)}
                     >

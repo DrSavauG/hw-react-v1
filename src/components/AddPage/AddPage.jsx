@@ -1,35 +1,67 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './addpage-style.css';
-import {useForm} from "react-hook-form";
-import buttonClose from '../../assets/icons/close-button.svg'
+import buttonClose from '../../assets/icons/close-button.svg';
 import Button from "../HeaderHome/FindYourMovieForm/Button/Button";
+import {Link} from "react-router-dom";
+import Form from "./Form/Form";
+import ModalWindow from "./ModalWindow/ModalWindow";
+import {useForm} from "react-hook-form";
+import MultiSelected from "./MultiSelected/MultiSelected";
+import Input from "./Input/Input";
+import Overview from "./Overview/Overview";
 
-const props = {
-    title: 'add movie'
-}
 
 const AddPage = () => {
+
+    const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});
+    const [selectGenre, setSelectGenre] = useState([])
+
+    const onSubmit = (data) => {
+        data.genre = selectGenre.map((item) => item.value)
+        console.log(data);
+        reset();
+    }
+
     return (
         <div className={'main-wrapper '}>
-            {/*todo:/*{'REFACTOR names'}*/}
-            <div className={'modal-window'}>
-                <h2 className={'modal-window__title'}>{props.title}</h2>
-                <button type={"button"} className={'modal-window__button-close'}>
-                    <img src={buttonClose} alt={'x'}/>
-                </button>
-                <div className={'modal-window__list-wrapper'}>
+            <ModalWindow title={"add movie"}>
+                <Link to={'/'}>
+                    <Button className={'modal-window__button-close'}>
+                        <img src={buttonClose}
+                             alt={'close'}/>
+                    </Button>
+                </Link>
+                <Form reset={reset} handleSubmit={handleSubmit} selectGenre={selectGenre}
+                      setSelectGenre={setSelectGenre} onSubmit={onSubmit}>
                     <div className={'modal-window__list'}>
-                        <div className={'list__left'}></div>
-                        <div className={'list__right'}></div>
+                        <div className={'modal-window--top'}>
+                            <div className={'list__left'}>
+                                <Input>{{title: 'title', register: register, errors: errors}}</Input>
+                                <Input>{{title: 'movie url', register: register, errors: errors}}</Input>
+                                <MultiSelected selectGenre={selectGenre} setSelectGenre={setSelectGenre}
+                                               title={'genre'}/>
+                            </div>
+                            <div className={'list__right'}>
+                                <Input>{{
+                                    title: 'release date',
+                                    type: 'date',
+                                    register: register,
+                                    errors: errors
+                                }}</Input>
+                                <Input>{{title: 'rating', type: 'number', register: register, errors: errors}}</Input>
+                                <Input>{{title: 'runtime', register: register, errors: errors}}</Input>
+                            </div>
+                        </div>
+                        <div className={'modal-window--bottom'}>
+                            <Overview register={register} errors={errors}/>
+                        </div>
                     </div>
-                        <div className={'modal-window--bottom'}></div>
-                </div>
-
-                <div className={'modal-window__buttons'}>
-                    <Button title={'reset'} className={"button button-trans"}/>
-                    <Button title={'submit'} className={"button button-red"}/>
-                </div>
-            </div>
+                    <div className={'modal-window__buttons'}>
+                        <Button title={'reset'} type={'reset'} className={"button button-trans"}/>
+                        <Button title={'submit'} type={'submit'} className={"button button-red"}/>
+                    </div>
+                </Form>
+            </ModalWindow>
         </div>
     );
 };
