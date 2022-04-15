@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {ErrorBoundary} from 'react-error-boundary';
 import ErrorFallback from "../ErrorFallback/ErrorFallback";
 import './style.css';
-import {store} from "../AppRouter/AppRouter";
+import {MyContext} from "../AppRouter/AppRouter";
 
 const NavigationMain = () => {
+    const {store} = useContext(MyContext);
     const [activeGenre, setActiveGenre] = useState(store.NAVIGATION[0]);
     store.activeGenre = activeGenre;
     store.setActiveGenre = setActiveGenre;

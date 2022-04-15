@@ -1,14 +1,17 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import './style.css';
 import {ErrorBoundary} from 'react-error-boundary';
 import ErrorFallback from "../ErrorFallback/ErrorFallback";
-import {store} from "../AppRouter/AppRouter";
+import {MyContext} from "../AppRouter/AppRouter";
 
 const SortBy = () => {
+    const {store} = useContext(MyContext);
     const [checked, setChecked] = useState(store.SORTLISTS[0]);
+
     const onClick = (e) => {
         setChecked(e.target.value);
         store.params.sort = e.target.value;
+        console.log("store.params",store.params);
         store.getFilms(store.setMovieList, store.params);
     }
 

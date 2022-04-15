@@ -22,5 +22,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(../../assets/images/Bitmap.png);
-    border-bottom: 10px solid #888888   ;
+    border-bottom: 10px solid #888888;
+}
+
+.header-home-film{
+    min-height: 396px;
+    width: 100vw;
+    background-color: #232323;
+    border-bottom: 10px solid #888888;
 }

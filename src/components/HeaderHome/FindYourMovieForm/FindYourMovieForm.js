@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import './style.css';
 import Button from "../../Button/Button";
 import Form from "../../AddPage/Form/Form";
 import {useForm} from "react-hook-form";
 import Input from "../../AddPage/Input/Input";
 import {useNavigate} from "react-router";
-import {store} from "../../AppRouter/AppRouter";
+import {MyContext} from "../../AppRouter/AppRouter";
 
 const FindYourMovieForm = () => {
+    const {store} = useContext(MyContext);
     const navigate = useNavigate();
     const [searchValue, setSearchValue] = useState('searchValue');
     const {register, handleSubmit, formState: {errors}, reset} = useForm({mode: "onBlur"});

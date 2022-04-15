@@ -7,15 +7,16 @@ import axios from "axios";
 import UserService from "../sevices/UserService";
 
 export default class Store {
+    constructor() {
+        makeAutoObservable(this);
+    }
     user = {};
     isAuth = false;
     isLoading = false;
     SORTLISTS = SORTLISTS;
     NAVIGATION = NAVIGATION;
 
-    constructor() {
-        makeAutoObservable(this);
-    }
+    params = {find: {_deletedAt: null}, sort: {title: 1}};
 
     setLoading(bool) {
         this.isLoading = bool;

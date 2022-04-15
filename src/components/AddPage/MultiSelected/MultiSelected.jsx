@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {MultiSelect} from 'react-multi-select-component';
 import './style.css';
-import {store} from "../../AppRouter/AppRouter";
+import {MyContext} from "../../AppRouter/AppRouter";
 
 const MultiSelected = ({ title, selectGenre, setSelectGenre}) => {
+    const {store} = useContext(MyContext);
+
     const options = [];
     const handleNewField = (value) => ({
         label: value.toLowerCase(),

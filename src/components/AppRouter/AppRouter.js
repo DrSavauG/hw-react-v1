@@ -7,8 +7,7 @@ import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import PublicRouter from "../PublicRoter/PublicRoter";
 import {observer} from "mobx-react-lite";
 import IsLoading from "../IsLoading/IsLoading";
-
-export const store = new Store();
+ const store = new Store();
 export const MyContext = createContext(store);
 
 const AppRouter = () => {
@@ -18,6 +17,7 @@ const AppRouter = () => {
         if (token) {
             store.checkAuth();
         }
+        console.log('refresh approuter')
     }, [token]);
 
     if(store.isLoading){
