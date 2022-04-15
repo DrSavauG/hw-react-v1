@@ -21,8 +21,11 @@ const {store} = useContext(MyContext);
 
     store.onClickFilm = onClickFilm;
     useEffect(() => {
+        let cleanupFunction = false;
+
         store.getFilms(store.setMovieList, store.params)//todo for performance
-        console.log('refresh HomePage')
+        console.log('refresh HomePage');
+        return () => cleanupFunction = true;
     }, []);
 
     return (
