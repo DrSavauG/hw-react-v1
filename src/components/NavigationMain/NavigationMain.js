@@ -16,11 +16,10 @@ const NavigationMain = () => {
 
     const onClick = (el) => {
         const params = {
-            find: {"_deletedAt": null, "genre": el},
-            sort: {'title': -1}
+            find: {"_deletedAt": null, "genre": el}
         };
 
-        if (el == 'all') {
+        if (el === 'all') {
             params.find = {"_deletedAt": null}
         }
         store.params = params;

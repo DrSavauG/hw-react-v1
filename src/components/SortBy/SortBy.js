@@ -9,9 +9,10 @@ const SortBy = () => {
     const [checked, setChecked] = useState(store.SORTLISTS[0]);
 
     const onClick = (e) => {
+
         setChecked(e.target.value);
+        console.log('e.target.value',e.target.value)
         store.params.sort = e.target.value;
-        console.log("store.params",store.params);
         store.getFilms(store.setMovieList, store.params);
     }
 
