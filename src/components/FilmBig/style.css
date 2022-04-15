@@ -2,6 +2,13 @@
     padding: 70px 3% 20px;
     display: flex;
     color: #FFFFFF;
+    height: 555px;
+    width: 100vw;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../assets/images/Bitmap.png);
+    border-bottom: 10px solid #888888;
 }
 
 .film-big--poster {
@@ -25,12 +32,14 @@
 .film-big--additional {
     margin: 30px 0;
     display: flex;
-    width: 15%;
-    justify-content: space-between;
+    /*width: 15%;*/
     font-weight: 300;
     font-size: 24px;
     line-height: 29px;
     color: #F65261;
+}
+.film-big--data__year{
+    margin-right: 10px;
 }
 
 .film-big--data__title {
@@ -68,7 +77,7 @@
     font-size: 20px;
     line-height: 24px;
     mix-blend-mode: normal;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .film-big--search {

@@ -15,8 +15,8 @@
 }
 
 .header-home-wrapper{
-    z-index: 1;
-    height: 396px;
+    /*z-index: 1;*/
+    height: 555px;
     width: 100vw;
     background-color: black;
     background-repeat: no-repeat;

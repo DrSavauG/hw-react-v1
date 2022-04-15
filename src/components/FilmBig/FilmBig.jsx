@@ -23,7 +23,7 @@ const FilmBig = (props) => {
                 </div>
                 <p className={'film-big--data__overview'}>{overview}</p>
             </div>
-            <img  onClick={()=>store.onClickFilm({})} className={'film-big--search'} src={search}
+            <img  onClick={(e)=>store.onClickFilm(e,{})} className={'film-big--search'} src={search}
                  alt={'click to context menu'}/>
         </div>
     );
