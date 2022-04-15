@@ -9,9 +9,12 @@ const SortBy = () => {
     const [checked, setChecked] = useState(store.SORTLISTS[0]);
 
     const onClick = (e) => {
+
         setChecked(e.target.value);
-        store.params.sort = e.target.value;
-        console.log("store.params",store.params);
+        console.log('e.target.value',e.target.value);
+        // let c = Object.create({},e.target.value)
+        // console.log(c)
+        store.params.sort = {[e.target.value]:1}
         store.getFilms(store.setMovieList, store.params);
     }
 
